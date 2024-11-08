@@ -89,14 +89,10 @@ async def get_formatted_application(application_id: str):
         # Format application
         formatted_data = format_application(application, carrier)
         
-        # Replace empty/null string values with "NA" recursively for medication_information only
+        # Replace empty/null string values with "NA" recursively
         def replace_empty_values(obj):
             if isinstance(obj, dict):
-                if "medication_information" in obj:
-                    obj["medication_information"] = {
-                        k: replace_empty_values(v) for k, v in obj["medication_information"].items()
-                    }
-                return obj
+                return {k: replace_empty_values(v) for k, v in obj.items()}
             elif isinstance(obj, list):
                 return [replace_empty_values(item) for item in obj]
             elif isinstance(obj, str) and (not obj or obj == "undefined"):
@@ -106,7 +102,9 @@ async def get_formatted_application(application_id: str):
             return obj
         
         # Apply the replacement to formatted data
-        formatted_data = replace_empty_values(formatted_data)
+        if formatted_data.get("medication_information"):
+            formatted_data["medication_information"] = replace_empty_values(formatted_data["medication_information"])
+        # formatted_data = replace_empty_values(formatted_data)
         
         # Copy all sections from the original data
         if isinstance(application.get("data"), dict):
