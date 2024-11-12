@@ -59,6 +59,7 @@ def get_carrier_name(naic: str) -> str:
         "68500": "Aetna",
         "60380": "Allstate",
         "82538": "Allstate",
+        "60534": "Allstate",
         "20699": "Chubb"
     }
     return carrier_map.get(naic, "Unknown")
@@ -126,12 +127,23 @@ async def get_formatted_application(application_id: str):
         
     except HTTPException as he:
         # Re-raise HTTP exceptions
+        print(f"HTTP Exception occurred: {str(he)}")
+        print(f"Status code: {he.status_code}")
+        print(f"Detail: {he.detail}")
         raise he
     except ValueError as ve:
         # Handle validation errors
+        print(f"Validation error occurred: {str(ve)}")
+        print(f"Error type: {type(ve)}")
+        import traceback
+        print(f"Traceback: {traceback.format_exc()}")
         raise HTTPException(status_code=400, detail=str(ve))
     except Exception as e:
         # Handle unexpected errors
+        print(f"Unexpected error occurred: {str(e)}")
+        print(f"Error type: {type(e)}")
+        import traceback
+        print(f"Traceback: {traceback.format_exc()}")
         raise HTTPException(
             status_code=500,
             detail=f"Error formatting application: {str(e)}"
