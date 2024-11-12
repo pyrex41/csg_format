@@ -127,7 +127,8 @@ def format_ace_application(application_data: Dict[str, Any]) -> Dict[str, Any]:
             "applicant_phone": format_phone_number(applicant_info.get("phone")),
             "applicant_dob": format_date(applicant_info.get("applicant_dob")),
             "gender": applicant_info.get("gender"),
-            "effective_date": format_date(applicant_info.get("effective_date"))
+            "effective_date": format_date(applicant_info.get("effective_date")),
+            "tobacco_usage": applicant_info.get("tobacco")
         },
         "medicare_information": {
             "medicare_information_claim_number": medicare_info.get("medicareNumber"),
