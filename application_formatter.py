@@ -184,6 +184,18 @@ def format_aetna_application(application_data: Dict[str, Any]) -> Dict[str, Any]
     applicant_info = data.get("applicant_info", {})
     medicare_info = data.get("medicare_information", {})
     payment_info = data.get("payment", {})
+    physician_info = data.get("physician_information", {})
+    physician_zip = physician_info.get("physician_zip")
+    if physician_zip:
+        # Look up city and state from zip code
+        with open('zipData.json') as f:
+            zip_data = json.load(f).get(physician_zip, {})
+        print(f"zip_data: {zip_data}")
+        physician_city = zip_data.get("cities", [""])[0] if zip_data.get("cities") else ""
+        physician_state = zip_data.get("state", "")
+        physician_info["physician_city"] = physician_city
+        physician_info["physician_state"] = physician_state
+
     medicare_dates = calculate_medicare_dates(
         applicant_info.get("applicant_dob"),
         applicant_info.get("effective_date"),
@@ -201,8 +213,12 @@ def format_aetna_application(application_data: Dict[str, Any]) -> Dict[str, Any]
             "applicant_dob": format_date(applicant_info.get("applicant_dob")),
             "gender": applicant_info.get("gender"),
             "effective_date": format_date(applicant_info.get("effective_date")),
-            "tobacco_usage": applicant_info.get("tobacco_usage") or applicant_info.get("tobacco") or False
+            "tobacco_usage": applicant_info.get("tobacco_usage") or applicant_info.get("tobacco") or False,
+            "height": applicant_info.get("height"),
+            "weight": applicant_info.get("weight"),
+            "legal_resident": True
         },
+        "physician_information": physician_info,
         "medicare_information": {
             "medicare_information_claim_number": medicare_info.get("medicareNumber"),
             "medicare_information_ssn": medicare_info.get("max_ssn"),
@@ -211,7 +227,8 @@ def format_aetna_application(application_data: Dict[str, Any]) -> Dict[str, Any]
             "medicare_part_a_eff_date": format_date(medicare_info.get("medicare_part_a")),
             "medicare_part_b_eff_date": format_date(medicare_info.get("medicare_part_b")),
             "did_turn_65_in_last_six_mo": medicare_dates["t65_six_months"],
-            "enroll_part_b_last_6_mo": medicare_dates["part_b_six_months"]
+            "enroll_part_b_last_6_mo": medicare_dates["part_b_six_months"],
+            "apply_guaranteed_issue": False
         },
         "producer": {
             "producer_first_name": producer_config.get("first_name"),
@@ -224,12 +241,44 @@ def format_aetna_application(application_data: Dict[str, Any]) -> Dict[str, Any]
             "accurate_recording": True,
             "interviewed_applicants": True,
             "application_provided": True,
-            "replacement_notice": True,
+            "replacement_notice_copy": True,
             "agent_requests_split_commissions": False
         },
         "payment": payment_info
     }
+    if "health_history" in data:
+        out = copy.deepcopy(data["health_history"])
+        prescription_drug_list = out.pop("prescription_drug_list", [])
+        if prescription_drug_list:
+            prescribed_medications = {}
+            med_name_upper = ""
+            for i,dic in enumerate(prescription_drug_list):
+                full_name = dic.get("drug", {}).get("drugName")
+                if full_name:
+                    parts = full_name.split()
+                    med_name = []
+                    found_upper = False
+                    for part in parts:
+                        if part.isupper():
+                            found_upper = True
+                        elif not found_upper:
+                            med_name.append(part)
+                    med_name = " ".join(med_name)   
+                    med_name_upper = med_name
+                    prescribed_medications[str(i)] = {
+                        "med_name": med_name,
+                        "diagnosis": dic.get("diagnosis"),
+                    }
+            out["med_name"] = med_name_upper
+            out["prescribed_medications"] = prescribed_medications
+            data["health_history"] = out
     
+    if 'hhd_information' not in data:
+        formatted_data['hhd_information'] = {
+            "household_resident": False,
+            "household_resident_has_carrier": False
+        }
+
     return formatted_data
 
 def format_allstate_application(application_data: Dict[str, Any]) -> Dict[str, Any]:
