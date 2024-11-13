@@ -36,14 +36,14 @@ def parse_json_data(json_str: str) -> Dict:
     except:
         return {}
 
-def get_plan_switch_reason(target_plan: str, current_plan: str) -> str:
+def get_plan_switch_reason(target_plan: str, current_plan: str, isUHC: bool = False) -> str:
     print(f'target_plan: {target_plan}, current_plan: {current_plan}')
     """Determine the reason for switching plans."""
     if not current_plan:
         return "other"
     
     if target_plan == current_plan:
-        return 'lower_premiums'
+        return 'lower_premiums' if not isUHC else 'SameBenefits'
 
     # Standardize the plan code
     current_plan = current_plan.replace("Select Plan ", "") if isinstance(current_plan, str) else ""
@@ -54,21 +54,21 @@ def get_plan_switch_reason(target_plan: str, current_plan: str) -> str:
 
     if target_plan == 'N':
         if current_plan in comprehensive_plans:
-            return 'fewer_benefits_lower_premiums'
+            return 'fewer_benefits_lower_premiums' if not isUHC else 'FewerBenefits'
         if current_plan in basic_plans:
-            return 'additional_benefits'
+            return 'additional_benefits' if not isUHC else 'ReplaceAdditionalBenefits'
         if current_plan in legacy_plans:
-            return 'other'
+            return 'other' if not isUHC else 'OtherReason'
     
     if target_plan == 'G':
         if current_plan in basic_plans + ['N']:
-            return 'additional_benefits'
+            return 'additional_benefits' if not isUHC else 'ReplaceAdditionalBenefits'
         if current_plan in ['C', 'F', 'High Deductible Plan F', 'Extended']:
-            return 'fewer_benefits_lower_premiums'
+            return 'fewer_benefits_lower_premiums' if not isUHC else 'FewerBenefits'
         if current_plan in legacy_plans:
-            return 'other'
+            return 'other' if not isUHC else 'OtherReason'
     
-    return 'other'
+    return 'other' if not isUHC else 'OtherReason'
 
 def calculate_medicare_dates(birth_date: str, effective_date: str, part_a_date: str, part_b_date: str) -> Dict[str, Any]:
     """Calculate various Medicare-related dates."""
@@ -399,6 +399,7 @@ def format_uhc_application(application_data: Dict[str, Any]) -> Dict[str, Any]:
     applicant_info = data.get("applicant_info", {})
     medicare_info = data.get("medicare_information", {})
     payment_info = data.get("payment", {})
+    payment_info["eft_confirm"] = "ongoing"
     
     medicare_dates = calculate_medicare_dates(
         applicant_info.get("applicant_dob"),
@@ -407,42 +408,57 @@ def format_uhc_application(application_data: Dict[str, Any]) -> Dict[str, Any]:
         medicare_info.get("medicare_part_b")
     )
 
+    with open('zipData.json') as f:
+        zipData = json.load(f)
+
+    zip5 = applicant_info.get("zip5")
+    if zip5:
+        zip_data = zipData.get(zip5, {})
+        address_city = zip_data.get("cities", [""])[0]
+        address_state = zip_data.get("state", "")
+    else:
+        address_city = ""
+        address_state = ""
+
     formatted_data = {
         "applicant_info": {
+            **applicant_info,
             "poa": True,
             "enroll_kit": True,
             "applicant_plan": applicant_info.get("plan") or applicant_info.get("applicant_plan"),
             "effective_date": format_date(applicant_info.get("effective_date")),
-            "f_name": applicant_info.get("f_name"),
-            "l_name": applicant_info.get("l_name"),
-            "address_line1": applicant_info.get("address_line1"),
-            "zip5": applicant_info.get("zip5"),
             "applicant_phone": format_phone_number(applicant_info.get("applicant_phone") or applicant_info.get("phone")),
             "applicant_dob": format_date(applicant_info.get("applicant_dob")),
-            "gender": applicant_info.get("gender")
+            "tobacco_usage": applicant_info.get("tobacco_usage") or applicant_info.get("tobacco") or False,
+            "address_city": address_city,
+            "address_state": address_state,
         },
         "medicare_information": {
-            "medicareNumber": medicare_info.get("medicareNumber"),
-            "medicare_part_a": medicare_info.get("medicare_part_a"),
-            "medicare_part_b": medicare_info.get("medicare_part_b"),
-            "max_ssn": medicare_info.get("max_ssn"),
-            "medicare_active": True if (
-                medicare_info.get("medicare_part_a") and 
-                medicare_info.get("medicare_part_b")
-            ) else False
+            "medicare_information_claim_number": medicare_info.get("medicareNumber"),
+            "medicare_information_ssn": medicare_info.get("max_ssn"),
+            "medicare_part_a_coverage": True if medicare_info.get("medicare_part_a") else False,
+            "medicare_part_b_coverage": True if medicare_info.get("medicare_part_b") else False,
+            "medicare_part_a_eff_date": format_date(medicare_info.get("medicare_part_a")),
+            "medicare_part_b_eff_date": format_date(medicare_info.get("medicare_part_b")),
+            "enroll_part_b_last_6_mo": medicare_dates["part_b_six_months"],
+            "did_turn_65_in_last_six_mo": medicare_dates["t65_six_months"],
+            "apply_guaranteed_issue": False,
+            "medicare_active": True
         },
         "producer": {
             "agent_first_name": producer_config.get("first_name"),
             "agent_last_name": producer_config.get("last_name"),
             "producer_phone": format_phone_number(producer_config.get("phone")),
             "producer_email": producer_config.get("email"),
-            "producer_writing_number": producer_config.get("writing_numbers", {}).get("uhc")
+            "producer_writing_number": producer_config.get("writing_numbers", {}).get("uhc"),
+            "policy_delivery_type": "Mail"
         },
         "plan_documents": {
             "policy_delivery_type": "Mail"
         },
         "payment": payment_info
     }
+
     
     return formatted_data
 
@@ -523,7 +539,8 @@ def format_application(application_data: Dict[str, Any], carrier: str) -> Dict[s
                     "existing_ms_inforce_repl_notice_copy": True,
                     "replacement_reason": get_plan_switch_reason(
                         applicant_info.get("applicant_plan"),
-                        existing_coverage.get("other_ms_carrier_product_code") or existing_coverage.get("supplemental_other_ms_carrier_product_code")
+                        existing_coverage.get("other_ms_carrier_product_code") or existing_coverage.get("supplemental_other_ms_carrier_product_code"),
+                        True
                     ),
                     "replacement_reason_other": "More Comprehensive Coverage",
                     "other_ms_carrier_start_date": format_date(existing_coverage.get("supplemental_start_date")),
