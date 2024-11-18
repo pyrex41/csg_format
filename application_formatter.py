@@ -137,7 +137,8 @@ def format_ace_application(application_data: Dict[str, Any]) -> Dict[str, Any]:
             "applicant_dob": format_date(applicant_info.get("applicant_dob")),
             "gender": applicant_info.get("gender"),
             "effective_date": format_date(applicant_info.get("effective_date")),
-            "tobacco_usage": applicant_info.get("tobacco_usage") or applicant_info.get("tobacco") or False
+            "tobacco_usage": applicant_info.get("tobacco_usage") or applicant_info.get("tobacco") or False,
+            "applicant_plan": applicant_info.get("applicant_plan")
         },
         "medicare_information": {
             "medicare_information_claim_number": medicare_info.get("medicareNumber"),
@@ -216,7 +217,8 @@ def format_aetna_application(application_data: Dict[str, Any]) -> Dict[str, Any]
             "tobacco_usage": applicant_info.get("tobacco_usage") or applicant_info.get("tobacco") or False,
             "height": applicant_info.get("height"),
             "weight": applicant_info.get("weight"),
-            "legal_resident": True
+            "legal_resident": True,
+            "applicant_plan": applicant_info.get("applicant_plan")
         },
         "physician_information": physician_info,
         "medicare_information": {
@@ -523,7 +525,7 @@ def format_application(application_data: Dict[str, Any], carrier: str) -> Dict[s
                     "existing_coverage_medicare_plan_replacement_indicator": True,
                     "existing_coverage_medicare_plan_repl_notice_copy": True,
                     "existing_coverage_medicare_plan_company": existing_coverage.get("advantage_company"),
-                    "existing_coverage_medicare_plan_policy_number": f"{existing_coverage.get('advantage_company')} Advantage Plan",
+                    "existing_coverage_medicare_plan_policy_number": "Advantage Plan" if existing_coverage.get('advantage_company') is None else f"{existing_coverage.get('advantage_company')} Advantage Plan",
                     "existing_coverage_medicare_plan_planned_term_date": format_date(term_date.strftime("%Y-%m-%d")),
                     "existing_coverage_medicare_plan_was_first_enrollment": True,
                     "existing_coverage_medicare_plan_was_dropped": False,
@@ -548,7 +550,7 @@ def format_application(application_data: Dict[str, Any], carrier: str) -> Dict[s
                     "other_health_ins_carrier_end_date": format_date(term_date.strftime("%Y-%m-%d")),
                     "other_ms_carrier": existing_coverage.get("supplemental_company"),
                     "other_ms_carrier_product_code": existing_coverage.get("supplemental_other_ms_carrier_product_code"),
-                    "other_ms_carrier_policy_number": f"{existing_coverage.get('supplemental_company')} {existing_coverage.get('supplemental_other_ms_carrier_product_code')}"
+                    "other_ms_carrier_policy_number": "Supplemental Plan" if existing_coverage.get('supplemental_company') is None else f"{existing_coverage.get('supplemental_other_ms_carrier_product_code')} {existing_coverage.get('supplemental_company')}"
                 }
             elif medicare_status == "no-plan":
                 formatted_data["existing_coverage"] = {
@@ -561,7 +563,7 @@ def format_application(application_data: Dict[str, Any], carrier: str) -> Dict[s
                     "other_health_ins_carrier_company": existing_coverage.get("other_insurance_company"),
                     "other_health_ins_carrier_phone_number": format_phone_number("1234567890"),
                     "other_health_ins_carrier_product_code": existing_coverage.get("other_insurance_plan_type"),
-                    "other_health_ins_carrier_policy_number": f"{existing_coverage.get('other_insurance_plan_type')} {existing_coverage.get('other_insurance_company')}",
+                    "other_health_ins_carrier_policy_number": "Other Plan" if existing_coverage.get('other_insurance_plan_type') is None and existing_coverage.get('other_insurance_company') is None else f"{existing_coverage.get('other_insurance_plan_type')} {existing_coverage.get('other_insurance_company')}",
                     "other_health_ins_carrier_disenrollment_reason": "Now covered by Medicare",
                     "other_health_ins_carrier_term_date": format_date(term_date.strftime("%Y-%m-%d"))
                 }
@@ -572,12 +574,19 @@ def format_application(application_data: Dict[str, Any], carrier: str) -> Dict[s
             if existing_coverage.get("received_medicaid_benefits"):
                 formatted_data["existing_coverage"]["received_medicaid_benefits"] = existing_coverage.get("received_medicaid_benefits")
             formatted_data["existing_coverage"]["apply_guaranteed_issue"] = False
+         
+        # Remove any None or empty values recursively
+        def remove_empty_values(d):
+            if not isinstance(d, dict):
+                return d
+            return {
+                k: remove_empty_values(v)
+                for k, v in d.items()
+                if v is not None and (not isinstance(v, dict) or v)
+            }
+            
+        formatted_data = remove_empty_values(formatted_data)
         
-        # Remove any None or empty values
-        formatted_data = {
-            k: v for k, v in formatted_data.items() 
-            if v is not None and (not isinstance(v, dict) or v)
-        }
         if "payment" in formatted_data:
             payment_info = formatted_data["payment"]
             routing_number = payment_info.get("eft_routing_number")
@@ -592,7 +601,6 @@ def format_application(application_data: Dict[str, Any], carrier: str) -> Dict[s
         print(f"Final formatted data (truncated): {truncate_json(formatted_data)}")
         print(f'sections: {formatted_data.keys()}')
         return formatted_data
-        
     except Exception as e:
         print(f"Error in format_application: {str(e)}")
         print(f"Error type: {type(e)}")

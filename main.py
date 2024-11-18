@@ -13,3 +13,4 @@ app.include_router(db_router, prefix="/api/db")
 
 # Include the new formatter routes
 app.include_router(formatter_router, prefix="/api/formatter")
+
