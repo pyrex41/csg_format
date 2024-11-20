@@ -81,35 +81,43 @@ def get_naic_code(company: str) -> str:
     Returns:
         NAIC code string if found, empty string if not found
     """
+    print(f"get_naic_code called with company: {company}")
+    
     if not company:
-        return ''
+        print("No company name provided, returning empty values")
+        return company, ''
         
     try:
+        print("Loading company data from supp_companies_full.json")
         with open('supp_companies_full.json', 'r') as f:
             companies = json.load(f)
             
+        print("Attempting exact match first")
         # Try exact match first
         for c in companies:
             if c['name_full'].lower() == company.lower():
-                return c['naic']
+                print(f"Found exact match: {c['name_full']} with NAIC {c['naic']}")
+                return c['name_full'], c['naic']
         
+        print("No exact match found, checking aliases")
         # Common abbreviations and aliases
         company_aliases = {
             'UHC': 'UnitedHealthcare',
-            'United Healthcare': 'UnitedHealthcare',
+            'United Healthcare': 'UnitedHealthcare', 
             'United Health Care': 'UnitedHealthcare',
             'BC': 'Blue Cross',
             'BCBS': 'Blue Cross Blue Shield',
             'Aflac': 'American Family Life Assur Co',
-
         }
         
         # Normalize input company name
         search_company = company_aliases.get(company, company)
+        print(f"Normalized company name: {search_company}")
         
+        print("Attempting fuzzy matching")
         # Try fuzzy matching with a threshold
         best_match_score = 0
-        best_match_naic = ''
+        best_match_dict = {}
         
         for c in companies:
             # Try both token sort ratio (handles word reordering) and partial ratio
@@ -120,18 +128,21 @@ def get_naic_code(company: str) -> str:
             score = max(token_sort_score, partial_score)
             
             if score > best_match_score:
+                print(f"New best match found: {c['name_full']} with score {score}")
                 best_match_score = score
                 best_match_dict = c
         
         # Only return a match if we're reasonably confident
         if best_match_score >= 80:
-            return (best_match_dict['name_full'], best_match_dict['naic'])
+            print(f"Found fuzzy match above threshold: {best_match_dict['name_full']} with NAIC {best_match_dict['naic']}")
+            return best_match_dict['name_full'], best_match_dict['naic']
         else:
-            return (company, '')
+            print(f"No match found above threshold (best score: {best_match_score})")
+            return company, ''
         
     except Exception as e:
         print(f"Error in get_naic_code: {str(e)}")
-        return (company, '')
+        return company, ''
 
 def calculate_medicare_dates(birth_date: str, effective_date: str, part_a_date: str, part_b_date: str) -> Dict[str, Any]:
     """Calculate various Medicare-related dates."""
@@ -602,7 +613,7 @@ def format_application(application_data: Dict[str, Any], carrier: str) -> Dict[s
                     }
                 }
             elif medicare_status == "supplemental-plan":
-                existing_coverage = {
+                new_existing_coverage = {
                     "existing_coverage_medicare_plan": False,
                     "other_health_ins_past_x_days": False,
                     "existing_ms_inforce_policy": True,
@@ -621,9 +632,9 @@ def format_application(application_data: Dict[str, Any], carrier: str) -> Dict[s
                     "other_ms_carrier_policy_number": "Supplemental Plan" if existing_coverage.get('supplemental_company') is None else f"{existing_coverage.get('supplemental_other_ms_carrier_product_code')} {existing_coverage.get('supplemental_company')}",
                 }
                 other_ms_carrier, other_ms_carrier_naic = get_naic_code(existing_coverage.get("supplemental_company"))
-                existing_coverage["other_ms_carrier"] = other_ms_carrier
-                existing_coverage["other_ms_carrer_naic"] = other_ms_carrier_naic
-                formatted_data["existing_coverage"] = existing_coverage
+                new_existing_coverage["other_ms_carrier"] = other_ms_carrier
+                new_existing_coverage["other_ms_carrer_naic"] = other_ms_carrier_naic
+                formatted_data["existing_coverage"] = new_existing_coverage
             elif medicare_status == "no-plan":
                 formatted_data["existing_coverage"] = {
                     "existing_ms_inforce_policy": False,
