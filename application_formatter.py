@@ -121,14 +121,17 @@ def get_naic_code(company: str) -> str:
             
             if score > best_match_score:
                 best_match_score = score
-                best_match_naic = c['naic']
+                best_match_dict = c
         
         # Only return a match if we're reasonably confident
-        return best_match_naic if best_match_score >= 80 else ''
+        if best_match_score >= 80:
+            return (best_match_dict['name_full'], best_match_dict['naic'])
+        else:
+            return (company, '')
         
     except Exception as e:
         print(f"Error in get_naic_code: {str(e)}")
-        return ''
+        return (company, '')
 
 def calculate_medicare_dates(birth_date: str, effective_date: str, part_a_date: str, part_b_date: str) -> Dict[str, Any]:
     """Calculate various Medicare-related dates."""
@@ -599,7 +602,7 @@ def format_application(application_data: Dict[str, Any], carrier: str) -> Dict[s
                     }
                 }
             elif medicare_status == "supplemental-plan":
-                formatted_data["existing_coverage"] = {
+                existing_coverage = {
                     "existing_coverage_medicare_plan": False,
                     "other_health_ins_past_x_days": False,
                     "existing_ms_inforce_policy": True,
@@ -614,11 +617,13 @@ def format_application(application_data: Dict[str, Any], carrier: str) -> Dict[s
                     "other_ms_carrier_start_date": format_date(existing_coverage.get("supplemental_start_date")),
                     "other_ms_carrier_term": format_date(term_date.strftime("%Y-%m-%d")),
                     "other_health_ins_carrier_end_date": format_date(term_date.strftime("%Y-%m-%d")),
-                    "other_ms_carrier": existing_coverage.get("supplemental_company"),
                     "other_ms_carrier_product_code": existing_coverage.get("supplemental_other_ms_carrier_product_code"),
                     "other_ms_carrier_policy_number": "Supplemental Plan" if existing_coverage.get('supplemental_company') is None else f"{existing_coverage.get('supplemental_other_ms_carrier_product_code')} {existing_coverage.get('supplemental_company')}",
-                    "other_ms_carrer_naic": get_naic_code(existing_coverage.get("supplemental_company"))
                 }
+                other_ms_carrier, other_ms_carrier_naic = get_naic_code(existing_coverage.get("supplemental_company"))
+                existing_coverage["other_ms_carrier"] = other_ms_carrier
+                existing_coverage["other_ms_carrer_naic"] = other_ms_carrier_naic
+                formatted_data["existing_coverage"] = existing_coverage
             elif medicare_status == "no-plan":
                 formatted_data["existing_coverage"] = {
                     "existing_ms_inforce_policy": False,
