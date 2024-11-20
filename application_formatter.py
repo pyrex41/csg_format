@@ -4,6 +4,7 @@ from typing import Any, Dict, Optional
 import os
 import copy
 from routing_number import lookup_routing_number
+from rapidfuzz import fuzz
 
 def format_phone_number(phone: str) -> Dict[str, str]:
     """Format phone number into area code, central office code, and station code."""
@@ -43,7 +44,7 @@ def get_plan_switch_reason(target_plan: str, current_plan: str, isUHC: bool = Fa
         return "other"
     
     if target_plan == current_plan:
-        return 'lower_premiums' if not isUHC else 'SameBenefits'
+        return 'lower_premiums' #if not isUHC else 'SameBenefits'
 
     # Standardize the plan code
     current_plan = current_plan.replace("Select Plan ", "") if isinstance(current_plan, str) else ""
@@ -54,21 +55,80 @@ def get_plan_switch_reason(target_plan: str, current_plan: str, isUHC: bool = Fa
 
     if target_plan == 'N':
         if current_plan in comprehensive_plans:
-            return 'fewer_benefits_lower_premiums' if not isUHC else 'FewerBenefits'
+            return 'fewer_benefits_lower_premiums' #if not isUHC else 'FewerBenefits'
         if current_plan in basic_plans:
-            return 'additional_benefits' if not isUHC else 'ReplaceAdditionalBenefits'
+            return 'additional_benefits' #if not isUHC else 'ReplaceAdditionalBenefits'
         if current_plan in legacy_plans:
-            return 'other' if not isUHC else 'OtherReason'
+            return 'other' #if not isUHC else 'OtherReason'
     
     if target_plan == 'G':
         if current_plan in basic_plans + ['N']:
-            return 'additional_benefits' if not isUHC else 'ReplaceAdditionalBenefits'
+            return 'additional_benefits' #if not isUHC else 'ReplaceAdditionalBenefits'
         if current_plan in ['C', 'F', 'High Deductible Plan F', 'Extended']:
-            return 'fewer_benefits_lower_premiums' if not isUHC else 'FewerBenefits'
+            return 'fewer_benefits_lower_premiums' #if not isUHC else 'FewerBenefits'
         if current_plan in legacy_plans:
-            return 'other' if not isUHC else 'OtherReason'
+            return 'other' #if not isUHC else 'OtherReason'
     
-    return 'other' if not isUHC else 'OtherReason'
+    return 'other' #if not isUHC else 'OtherReason'
+
+
+def get_naic_code(company: str) -> str:
+    """Look up NAIC code for insurance company name using fuzzy matching.
+    
+    Args:
+        company: Company name to look up
+        
+    Returns:
+        NAIC code string if found, empty string if not found
+    """
+    if not company:
+        return ''
+        
+    try:
+        with open('supp_companies_full.json', 'r') as f:
+            companies = json.load(f)
+            
+        # Try exact match first
+        for c in companies:
+            if c['name_full'].lower() == company.lower():
+                return c['naic']
+        
+        # Common abbreviations and aliases
+        company_aliases = {
+            'UHC': 'UnitedHealthcare',
+            'United Healthcare': 'UnitedHealthcare',
+            'United Health Care': 'UnitedHealthcare',
+            'BC': 'Blue Cross',
+            'BCBS': 'Blue Cross Blue Shield',
+            'Aflac': 'American Family Life Assur Co',
+
+        }
+        
+        # Normalize input company name
+        search_company = company_aliases.get(company, company)
+        
+        # Try fuzzy matching with a threshold
+        best_match_score = 0
+        best_match_naic = ''
+        
+        for c in companies:
+            # Try both token sort ratio (handles word reordering) and partial ratio
+            token_sort_score = fuzz.token_sort_ratio(search_company.lower(), c['name_full'].lower())
+            partial_score = fuzz.partial_ratio(search_company.lower(), c['name_full'].lower())
+            
+            # Take the higher of the two scores
+            score = max(token_sort_score, partial_score)
+            
+            if score > best_match_score:
+                best_match_score = score
+                best_match_naic = c['naic']
+        
+        # Only return a match if we're reasonably confident
+        return best_match_naic if best_match_score >= 80 else ''
+        
+    except Exception as e:
+        print(f"Error in get_naic_code: {str(e)}")
+        return ''
 
 def calculate_medicare_dates(birth_date: str, effective_date: str, part_a_date: str, part_b_date: str) -> Dict[str, Any]:
     """Calculate various Medicare-related dates."""
@@ -529,8 +589,14 @@ def format_application(application_data: Dict[str, Any], carrier: str) -> Dict[s
                     "existing_coverage_medicare_plan_planned_term_date": format_date(term_date.strftime("%Y-%m-%d")),
                     "existing_coverage_medicare_plan_was_first_enrollment": True,
                     "existing_coverage_medicare_plan_was_dropped": False,
-                    "existing_coverage_medicare_plan_reason": "other",
-                    "existing_coverage_medicare_plan_reason_other": "More Comprehensive Coverage"
+                    "existing_coverage_medicare_plan_reason": {
+                        "0": "o",
+                        "1": "t",
+                        "2": "h",
+                        "3": "e",
+                        "4": "r",
+                        "other": True,
+                    }
                 }
             elif medicare_status == "supplemental-plan":
                 formatted_data["existing_coverage"] = {
@@ -550,7 +616,8 @@ def format_application(application_data: Dict[str, Any], carrier: str) -> Dict[s
                     "other_health_ins_carrier_end_date": format_date(term_date.strftime("%Y-%m-%d")),
                     "other_ms_carrier": existing_coverage.get("supplemental_company"),
                     "other_ms_carrier_product_code": existing_coverage.get("supplemental_other_ms_carrier_product_code"),
-                    "other_ms_carrier_policy_number": "Supplemental Plan" if existing_coverage.get('supplemental_company') is None else f"{existing_coverage.get('supplemental_other_ms_carrier_product_code')} {existing_coverage.get('supplemental_company')}"
+                    "other_ms_carrier_policy_number": "Supplemental Plan" if existing_coverage.get('supplemental_company') is None else f"{existing_coverage.get('supplemental_other_ms_carrier_product_code')} {existing_coverage.get('supplemental_company')}",
+                    "other_ms_carrer_naic": get_naic_code(existing_coverage.get("supplemental_company"))
                 }
             elif medicare_status == "no-plan":
                 formatted_data["existing_coverage"] = {

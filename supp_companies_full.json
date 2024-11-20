@@ -1,0 +1,1616 @@
+[
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDktQoMogEIbWVkX3N1cHA",
+        "name": "(Anthem) Anthem Blue Cross Life & Hlth Ins Co",
+        "name_full": "(Anthem) Anthem Blue Cross Life and Health Insurance Company",
+        "naic": "62825"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDEqQkMogEIbWVkX3N1cHA",
+        "name": "(Anthem) Anthem Hlth Plans Of KY Inc",
+        "name_full": "(Anthem) Anthem Health Plans of Kentucky, Inc.",
+        "naic": "95120"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCc2gkMogEIbWVkX3N1cHA",
+        "name": "(Anthem) Anthem Hlth Plans of ME Inc",
+        "name_full": "(Anthem) Anthem Health Plans of Maine, Inc.",
+        "naic": "52618"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDktQsMogEIbWVkX3N1cHA",
+        "name": "(Anthem) Anthem Hlth Plans of VA Inc",
+        "name_full": "(Anthem) Anthem VA/NV",
+        "naic": "71835"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMDf3woMogEIbWVkX3N1cHA",
+        "name": "(Anthem) Rocky Mountain Hospital & Medical",
+        "name_full": "(Anthem) Blue Cross Blue Shield of Colorado",
+        "naic": "11011"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMD6nwgMogEIbWVkX3N1cHA",
+        "name": "United Hlthcare of AZ  Inc",
+        "name_full": "AARP - UNITEDHEALTHCARE OF ARIZONA, INC.",
+        "naic": "96016"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDX6gsMogEIbWVkX3N1cHA",
+        "name": "United Hlthcare Ins Co Of NY",
+        "name_full": "AARP - United HealthCare Insurance Company of New York",
+        "naic": "60093"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICj0goMogEIbWVkX3N1cHA",
+        "name": "AARP Medicare Supplement Insurance Plans, insured by United Healthcare Insurance Company of America",
+        "name_full": "AARP Medicare Supplement Insurance Plans, insured by United Healthcare Insurance Company of America",
+        "naic": "84549"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDu1AgMogEIbWVkX3N1cHA",
+        "name": "UnitedHealthcare Ins Co",
+        "name_full": "AARP Medicare Supplement Plans, insured by UnitedHealthcare",
+        "naic": "79413"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDEywkMogEIbWVkX3N1cHA",
+        "name": "Ace Prop & Cas Ins Co",
+        "name_full": "ACE PROPERTY AND CASUALTY INSURANCE COMPANY",
+        "naic": "20699"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCkoAoMogEIbWVkX3N1cHA",
+        "name": "Aetna Hlth & Life Ins Co",
+        "name_full": "AETNA HEALTH AND LIFE INSURANCE COMPANY",
+        "naic": "78700"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCZ9AgMogEIbWVkX3N1cHA",
+        "name": "Aetna Hlth Ins Co",
+        "name_full": "AETNA HEALTH INSURANCE COMPANY",
+        "naic": "72052"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCcswgMogEIbWVkX3N1cHA",
+        "name": "Aetna Life Ins Co",
+        "name_full": "AETNA LIFE INSURANCE COMPANY",
+        "naic": "60054"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDSyQsMogEIbWVkX3N1cHA",
+        "name": "American Benefit Life Ins Co",
+        "name_full": "AMERICAN BENEFIT LIFE INSURANCE COMPANY",
+        "naic": "66001"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICUhAsMogEIbWVkX3N1cHA",
+        "name": "American Progressive L&H Ins Of NY",
+        "name_full": "AMERICAN PROGRESSIVE LIFE & HEALTH INSURANCE COMPANY OF NEW YORK",
+        "naic": "80624"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCGhggMogEIbWVkX3N1cHA",
+        "name": "American Republic Corp Ins Co",
+        "name_full": "AMERICAN REPUBLIC CORP INSURANCE COMPANY",
+        "naic": "67679"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDSsQsMogEIbWVkX3N1cHA",
+        "name": "American Republic Ins Co",
+        "name_full": "AMERICAN REPUBLIC INSURANCE COMPANY",
+        "naic": "60836"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDO-AkMogEIbWVkX3N1cHA",
+        "name": "American Retirement Life Ins Co (CIGNA)",
+        "name_full": "AMERICAN RETIREMENT LIFE INSURANCE COMPANY (CIGNA)",
+        "naic": "88366"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCcuggMogEIbWVkX3N1cHA",
+        "name": "ANTHEM HEALTH PLANS OF New Hampshire, INC.",
+        "name_full": "ANTHEM HEALTH PLANS OF New Hampshire, INC.",
+        "naic": "53759"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDDkwkMogEIbWVkX3N1cHA",
+        "name": "Asuris NW Hlth",
+        "name_full": "ASURIS NORTHWEST HEALTH",
+        "naic": "47350"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDX7QoMogEIbWVkX3N1cHA",
+        "name": "Atlantic Coast Life Ins Co",
+        "name_full": "ATLANTIC COAST LIFE INSURANCE COMPANY",
+        "naic": "61115"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDE2QkMogEIbWVkX3N1cHA",
+        "name": "Avera Hlth Plans Inc",
+        "name_full": "AVERA HEALTH PLANS, INC.",
+        "naic": "95839"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgOCwpQkMogEIbWVkX3N1cHA",
+        "name": "Accendo Ins Co",
+        "name_full": "Accendo Insurance Company (a CVS company and Aetna affiliate)",
+        "naic": "63444"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICA4QkMogEIbWVkX3N1cHA",
+        "name": "American Family Life Assur Co of Col",
+        "name_full": "Aflac, underwritten by Tier One Insurance Company",
+        "naic": "60380"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCGpgsMogEIbWVkX3N1cHA",
+        "name": "Allstate Health Solutions",
+        "name_full": "Allstate Health Solutions",
+        "naic": "82538"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCrpwoMogEIbWVkX3N1cHA",
+        "name": "Allstate Health Solutions (AHL)",
+        "name_full": "Allstate Health Solutions (AHL)",
+        "naic": "60534"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDS-AsMogEIbWVkX3N1cHA",
+        "name": "Amerihealth Ins Co Of NJ",
+        "name_full": "AmeriHealth Insurance Company of New Jersey",
+        "naic": "60061"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICAoQkMogEIbWVkX3N1cHA",
+        "name": "American Continental Ins Co",
+        "name_full": "American Continental Insurance Company (Aetna)",
+        "naic": "12321"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMDIkgoMogEIbWVkX3N1cHA",
+        "name": "American Fin Security Life Ins Co",
+        "name_full": "American Financial Security Life Insurance Company",
+        "naic": "69337"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCkgAoMogEIbWVkX3N1cHA",
+        "name": "American Natl Life Ins Co Of TX",
+        "name_full": "American National Life Insurance Company of Texas",
+        "naic": "71773"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDSiQgMogEIbWVkX3N1cHA",
+        "name": "Americo Fin Life & Ann Ins Co",
+        "name_full": "Americo / Great Southern Life Insurance Company",
+        "naic": "61999"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKD9yQkMogEIbWVkX3N1cHA",
+        "name": "Anthem Hlth Plans Inc",
+        "name_full": "Anthem Hlth Plans Inc",
+        "naic": "60217"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDD4wkMogEIbWVkX3N1cHA",
+        "name": "Anthem Ins Co Inc",
+        "name_full": "Anthem Ins Co Inc",
+        "naic": "28207"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCrnwsMogEIbWVkX3N1cHA",
+        "name": "Assured Life Association",
+        "name_full": "Assured Life Association",
+        "naic": "56499"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMD6jwkMogEIbWVkX3N1cHA",
+        "name": "Aultcare Ins Co",
+        "name_full": "Aultcare Insurance Company",
+        "naic": "77216"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMD6xwoMogEIbWVkX3N1cHA",
+        "name": "Avalon Ins Co",
+        "name_full": "Avalon Insurance Company",
+        "naic": "12358"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDEnwkMogEIbWVkX3N1cHA",
+        "name": "Bankers Fidelity Life Ins Co",
+        "name_full": "BANKERS FIDELITY LIFE INSURANCE COMPANY",
+        "naic": "61239"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDS8QgMogEIbWVkX3N1cHA",
+        "name": "Bankers Life & Cas Co",
+        "name_full": "BANKERS LIFE AND CASUALTY COMPANY",
+        "naic": "61263"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgODarQoMogEIbWVkX3N1cHA",
+        "name": "USAble Mut Ins Co",
+        "name_full": "BCBS Arkansas",
+        "naic": "83470"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMC17wsMogEIbWVkX3N1cHA",
+        "name": "BCBS IL/TX/NM/OK",
+        "name_full": "BCBS IL/TX/NM/OK",
+        "naic": "70670"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCI2wgMogEIbWVkX3N1cHA",
+        "name": "BCBS of WI (Anthem)",
+        "name_full": "BCBS of WI (Anthem)",
+        "naic": "54003"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDS-AgMogEIbWVkX3N1cHA",
+        "name": "BCBSM Inc",
+        "name_full": "BCBSM, INC.  D/B/A BLUE CROSS BLUE SHIELD OF MINNESOTA",
+        "naic": "55026"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDktQgMogEIbWVkX3N1cHA",
+        "name": "BCBS Of MS Mut Ins Co",
+        "name_full": "BLUE CROSS & BLUE SHIELD OF MISSISSIPPI, A MUTUAL INSURANCE COMPANY",
+        "naic": "60111"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDk1QgMogEIbWVkX3N1cHA",
+        "name": "BCBS of RI",
+        "name_full": "BLUE CROSS & BLUE SHIELD OF RHODE ISLAND",
+        "naic": "53473"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCZ1AsMogEIbWVkX3N1cHA",
+        "name": "BCBS of GA Inc",
+        "name_full": "BLUE CROSS AND BLUE SHIELD OF GEORGIA, INC.",
+        "naic": "54801"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCrgQsMogEIbWVkX3N1cHA",
+        "name": "BCBS of KC",
+        "name_full": "BLUE CROSS AND BLUE SHIELD OF KANSAS CITY",
+        "naic": "47171"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICUuAgMogEIbWVkX3N1cHA",
+        "name": "BCBS Of KS Inc",
+        "name_full": "BLUE CROSS AND BLUE SHIELD OF KANSAS, INC.",
+        "naic": "70729"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDD0wkMogEIbWVkX3N1cHA",
+        "name": "BCBS of MA",
+        "name_full": "BLUE CROSS AND BLUE SHIELD OF MASSACHUSETTS, INC.",
+        "naic": "53228"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCO-QoMogEIbWVkX3N1cHA",
+        "name": "BCBS of VT",
+        "name_full": "BLUE CROSS AND BLUE SHIELD OF VERMONT",
+        "naic": "53295"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICApAgMogEIbWVkX3N1cHA",
+        "name": "BCBS of MI Mut Ins Co",
+        "name_full": "BLUE CROSS BLUE SHIELD OF MICHIGAN MUTUAL INSURANCE COMPANY",
+        "naic": "54291"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDSuAkMogEIbWVkX3N1cHA",
+        "name": "BCBS of MT",
+        "name_full": "BLUE CROSS BLUE SHIELD OF MONTANA",
+        "naic": "53686"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMDIgggMogEIbWVkX3N1cHA",
+        "name": "Blue Shield of CA Life & Hlth Ins Co",
+        "name_full": "BLUE SHIELD OF CALIFORNIA LIFE & HEALTH INSURANCE COMPANY",
+        "naic": "61557"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMD15goMogEIbWVkX3N1cHA",
+        "name": "Bankers Fidelity Assur Co",
+        "name_full": "Bankers Fidelity Assurance Company",
+        "naic": "71919"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICU8LSbggoMogEIbWVkX3N1cHA",
+        "name": "Atlantic Capital Life Assur Co",
+        "name_full": "Bankers Fidelity, underwritten by Atlantic Capital Life Assurance Company",
+        "naic": "17393"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCZtQoMogEIbWVkX3N1cHA",
+        "name": "Bankers Life Ins Co",
+        "name_full": "Bankers Life Insurance Company",
+        "naic": "81043"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDS5AsMogEIbWVkX3N1cHA",
+        "name": "Blue Care Network Of MI",
+        "name_full": "Blue Care Network of Michigan",
+        "naic": "95610"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCZ1AoMogEIbWVkX3N1cHA",
+        "name": "BCBS of AZ Inc",
+        "name_full": "Blue Cross Blue Shield of Arizona, Inc.",
+        "naic": "53589"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgODvqwoMogEIbWVkX3N1cHA",
+        "name": "BCBS of WY",
+        "name_full": "Blue Cross Blue Shield of Wyoming",
+        "naic": "53767"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICApAkMogEIbWVkX3N1cHA",
+        "name": "BCBS of AL",
+        "name_full": "Blue Cross and Blue Shield of Alabama",
+        "naic": "55433"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDEuQsMogEIbWVkX3N1cHA",
+        "name": "BCBS Of FL",
+        "name_full": "Blue Cross and Blue Shield of Florida, Inc.",
+        "naic": "98167"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCroQsMogEIbWVkX3N1cHA",
+        "name": "BCBS Of NE",
+        "name_full": "Blue Cross and Blue Shield of Nebraska",
+        "naic": "77780"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICApAoMogEIbWVkX3N1cHA",
+        "name": "BCBS of NC Inc",
+        "name_full": "Blue Cross and Blue Shield of North Carolina",
+        "naic": "54631"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCI2wsMogEIbWVkX3N1cHA",
+        "name": "Blue Cross of ID Hlth Serv Inc",
+        "name_full": "Blue Cross of Idaho Health Service, Inc.",
+        "naic": "60095"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICA1I7nlQoMogEIbWVkX3N1cHA",
+        "name": "BC BS KS Solutions Inc",
+        "name_full": "BlueCross BlueShield Kansas Solutions Inc",
+        "naic": "15481"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMD69wkMogEIbWVkX3N1cHA",
+        "name": "BCBS of TN Inc",
+        "name_full": "BlueCross BlueShield of Tennessee, Inc.",
+        "naic": "54518"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDE8QoMogEIbWVkX3N1cHA",
+        "name": "BCBS Of SC Inc",
+        "name_full": "BlueCross and BlueShield of South Carolina",
+        "naic": "38520"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMC_kAoMogEIbWVkX3N1cHA",
+        "name": "Capital Blue Cross",
+        "name_full": "CAPITAL BLUE CROSS",
+        "naic": "54720"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMC_oAsMogEIbWVkX3N1cHA",
+        "name": "Carefirst of MD Inc",
+        "name_full": "CAREFIRST OF MARYLAND, INC.",
+        "naic": "47058"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDkpQoMogEIbWVkX3N1cHA",
+        "name": "CDPHP Universal Benefits Inc",
+        "name_full": "CDPHP Universal Benefits, Inc.",
+        "naic": "47027"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICAkQkMogEIbWVkX3N1cHA",
+        "name": "Christian Fidelity Life Ins Co",
+        "name_full": "CHRISTIAN FIDELITY LIFE INSURANCE COMPANY",
+        "naic": "61859"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCG-goMogEIbWVkX3N1cHA",
+        "name": "Cigna Hlth & Life Ins Co",
+        "name_full": "CIGNA HEALTH AND LIFE INSURANCE COMPANY",
+        "naic": "67369"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDXnQoMogEIbWVkX3N1cHA",
+        "name": "Colonial Penn Life Ins Co",
+        "name_full": "COLONIAL PENN LIFE INSURANCE COMPANY",
+        "naic": "62065"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICjvAsMogEIbWVkX3N1cHA",
+        "name": "Companion Life Ins Co",
+        "name_full": "COMPANION LIFE INSURANCE COMPANY",
+        "naic": "62243"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDE_wsMogEIbWVkX3N1cHA",
+        "name": "Continental Gen Ins Co",
+        "name_full": "CONTINENTAL GENERAL INSURANCE COMPANY",
+        "naic": "71404"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCciwoMogEIbWVkX3N1cHA",
+        "name": "Country Life Ins Co",
+        "name_full": "COUNTRY Life Insurance Company",
+        "naic": "62553"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCZzQsMogEIbWVkX3N1cHA",
+        "name": "CSA Fraternal Life",
+        "name_full": "CSA Fraternal Life",
+        "naic": "56138"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMC_4QsMogEIbWVkX3N1cHA",
+        "name": "CSI Life Insurance Company",
+        "name_full": "CSI Life Insurance Company",
+        "naic": "82880"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDEuQoMogEIbWVkX3N1cHA",
+        "name": "CareFirst BlueChoice Inc",
+        "name_full": "CareFirst BlueChoice, Inc.",
+        "naic": "96202"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICUtAsMogEIbWVkX3N1cHA",
+        "name": "Catholic Life Ins",
+        "name_full": "Catholic Life Insurance",
+        "naic": "57347"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDX0wkMogEIbWVkX3N1cHA",
+        "name": "Catholic United Financial",
+        "name_full": "Catholic United Financial",
+        "naic": "57053"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICAkQoMogEIbWVkX3N1cHA",
+        "name": "Central States H & L Co Of Omaha",
+        "name_full": "Central States Health and Life Co. of Omaha",
+        "naic": "61751"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDSvgkMogEIbWVkX3N1cHA",
+        "name": "Central States Ind Co Of Omaha",
+        "name_full": "Central States Indemnity Co. of Omaha",
+        "naic": "34274"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICUyAkMogEIbWVkX3N1cHA",
+        "name": "Cigna Ins Co",
+        "name_full": "Cigna Insurance Company",
+        "naic": "65269"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCc8wkMogEIbWVkX3N1cHA",
+        "name": "Cigna National Health Ins Co",
+        "name_full": "Cigna National Health Insurance Company",
+        "naic": "61727"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMDIggsMogEIbWVkX3N1cHA",
+        "name": "Columbian Mut Life Ins Co",
+        "name_full": "Columbian Mutual Life Insurance Company",
+        "naic": "62103"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCG2goMogEIbWVkX3N1cHA",
+        "name": "Combined Ins Co Of Amer",
+        "name_full": "Combined Insurance Company of America",
+        "naic": "62146"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMDfnwsMogEIbWVkX3N1cHA",
+        "name": "Community Ins Co (Anthem)",
+        "name_full": "Community Ins Co (Anthem)",
+        "naic": "10345"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMC_oQoMogEIbWVkX3N1cHA",
+        "name": "Companion Life Ins Co",
+        "name_full": "Companion Life Insurance Company",
+        "naic": "77828"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCZuAsMogEIbWVkX3N1cHA",
+        "name": "Connecticare Ins Co Inc",
+        "name_full": "ConnectiCare Insurance Company, Inc.",
+        "naic": "11209"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCr1wsMogEIbWVkX3N1cHA",
+        "name": "Continental Life Ins Co Brentwood",
+        "name_full": "Continental Life Insurance Company of Brentwood, Tennessee (Aetna)",
+        "naic": "68500"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDDmwkMogEIbWVkX3N1cHA",
+        "name": "Dean Hlth Plan Inc",
+        "name_full": "Dean Health Plan, Inc.",
+        "naic": "96156"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDSzgoMogEIbWVkX3N1cHA",
+        "name": "Everest Reins Co",
+        "name_full": "EVEREST REINSURANCE COMPANY",
+        "naic": "26921"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMDIsgoMogEIbWVkX3N1cHA",
+        "name": "Educators Mut Ins Assoc",
+        "name_full": "Educators Mutual Insurance Association",
+        "naic": "81701"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICUpAgMogEIbWVkX3N1cHA",
+        "name": "Elips Life Ins Co",
+        "name_full": "Elips Life Insurance Company \u2013 Lumico Medigap Solutions",
+        "naic": "85561"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDShAgMogEIbWVkX3N1cHA",
+        "name": "EmblemHealth Plan, Inc.",
+        "name_full": "EmblemHealth Plan, Inc.",
+        "naic": "60094"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDEiQkMogEIbWVkX3N1cHA",
+        "name": "Empire Healthchoice Assur Inc (Anthem)",
+        "name_full": "Empire Healthchoice Assur Inc (Anthem)",
+        "naic": "55093"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCG2gkMogEIbWVkX3N1cHA",
+        "name": "Equitable Life & Cas Ins Co",
+        "name_full": "Equitable Life & Casualty Insurance Company",
+        "naic": "62952"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCZjQsMogEIbWVkX3N1cHA",
+        "name": "Equitable National Life Insurance Company",
+        "name_full": "Equitable National Life Insurance Company",
+        "naic": "91785"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCr9wgMogEIbWVkX3N1cHA",
+        "name": "Erie Family Life Ins Co",
+        "name_full": "Erie Family Life Insurance Company",
+        "naic": "70769"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICA5QoMogEIbWVkX3N1cHA",
+        "name": "Everence Assn Inc",
+        "name_full": "Everence Association Inc",
+        "naic": "57991"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMD6jwgMogEIbWVkX3N1cHA",
+        "name": "Excellus Hlth Plan Inc",
+        "name_full": "Excellus Health Plan Inc.",
+        "naic": "55107"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDShAkMogEIbWVkX3N1cHA",
+        "name": "Fallon Hlth & Life Assur Co",
+        "name_full": "FALLON HEALTH AND LIFE ASSURANCE CO. INC.",
+        "naic": "66828"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDE3wgMogEIbWVkX3N1cHA",
+        "name": "Family Life Ins Co",
+        "name_full": "FAMILY LIFE INSURANCE COMPANY",
+        "naic": "63053"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCclwgMogEIbWVkX3N1cHA",
+        "name": "Forethought Life Ins Co",
+        "name_full": "FORETHOUGHT LIFE INSURANCE COMPANY",
+        "naic": "91642"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCchgoMogEIbWVkX3N1cHA",
+        "name": "Farm Bureau Health Plans",
+        "name_full": "Farm Bureau Health Plans",
+        "naic": "89005"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDX2ggMogEIbWVkX3N1cHA",
+        "name": "Members Hlth Ins Co",
+        "name_full": "Farm Bureau Health Plans \u2013 Member\u2019s Health Insurance Company",
+        "naic": "94587"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDu2AkMogEIbWVkX3N1cHA",
+        "name": "Federal Life Ins Co",
+        "name_full": "Federal Life Insurance Company",
+        "naic": "63223"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCGlggMogEIbWVkX3N1cHA",
+        "name": "First Hlth Life & Hlth Ins Co",
+        "name_full": "First Health Life & Health Insurance Company",
+        "naic": "90328"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCrgQoMogEIbWVkX3N1cHA",
+        "name": "First Comm Hlth Plan Inc",
+        "name_full": "FirstCommunity Health Plan Inc.",
+        "naic": "47051"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICAsQoMogEIbWVkX3N1cHA",
+        "name": "Genworth Life & Ann Ins Co",
+        "name_full": "GENWORTH LIFE AND ANNUITY INSURANCE COMPANY",
+        "naic": "65536"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICU2AkMogEIbWVkX3N1cHA",
+        "name": "Genworth Life Ins Co",
+        "name_full": "GENWORTH LIFE INSURANCE COMPANY",
+        "naic": "70025"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCZ5QsMogEIbWVkX3N1cHA",
+        "name": "Gerber Life Ins Co",
+        "name_full": "GERBER LIFE INSURANCE COMPANY",
+        "naic": "70939"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDS-QoMogEIbWVkX3N1cHA",
+        "name": "Globe Life & Accident Ins Co",
+        "name_full": "GLOBE LIFE AND ACCIDENT INSURANCE COMPANY",
+        "naic": "91472"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICAiQgMogEIbWVkX3N1cHA",
+        "name": "GPM Health and Life Ins Co",
+        "name_full": "GPM Health and Life Insurance Company",
+        "naic": "67059"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDX3QgMogEIbWVkX3N1cHA",
+        "name": "Garden State Life Ins Co",
+        "name_full": "Garden State Life Insurance Company",
+        "naic": "63657"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDS1AsMogEIbWVkX3N1cHA",
+        "name": "Geisinger Hlth Plan",
+        "name_full": "Geisinger Health Plan",
+        "naic": "95923"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCGxgkMogEIbWVkX3N1cHA",
+        "name": "Globe Life Ins Co of New York",
+        "name_full": "Globe Life Insurance Company of New York",
+        "naic": "74101"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCcywoMogEIbWVkX3N1cHA",
+        "name": "Government Personnel Mut Life Ins Co",
+        "name_full": "Government Personnel Mutual Life Insurance Company",
+        "naic": "63967"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCZjQkMogEIbWVkX3N1cHA",
+        "name": "Great Southern Life Ins Co",
+        "name_full": "Great Southern Life Insurance Company (Americo)",
+        "naic": "90212"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMD19gsMogEIbWVkX3N1cHA",
+        "name": "Greek Catholic Union Of The USA",
+        "name_full": "Greek Catholic Union Of The USA",
+        "naic": "56693"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDSyQgMogEIbWVkX3N1cHA",
+        "name": "Guarantee Trust Life Ins Co",
+        "name_full": "Guarantee Trust Life Insurance Company",
+        "naic": "64211"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDXmgsMogEIbWVkX3N1cHA",
+        "name": "Health Alliance Medical Plans",
+        "name_full": "HEALTH ALLIANCE MEDICAL PLANS, INC.",
+        "naic": "77950"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCGugkMogEIbWVkX3N1cHA",
+        "name": "Health Net Life Ins Co",
+        "name_full": "HEALTH NET LIFE INSURANCE COMPANY",
+        "naic": "66141"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMC1nwkMogEIbWVkX3N1cHA",
+        "name": "Health Partners Plans Inc",
+        "name_full": "HEALTH PARTNERS PLANS, INC",
+        "naic": "95066"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDDswsMogEIbWVkX3N1cHA",
+        "name": "Horizon Hlthcare Serv Inc",
+        "name_full": "HORIZON HEALTHCARE SERVICES, INC.",
+        "naic": "55069"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCcugsMogEIbWVkX3N1cHA",
+        "name": "Hospital Serv Assn of NE PA",
+        "name_full": "HOSPITAL SERVICE ASSOCIATION OF NORTHEASTERN PENNSYLVANIA",
+        "naic": "54747"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDXowsMogEIbWVkX3N1cHA",
+        "name": "Humana Ins Co Of PR Inc",
+        "name_full": "HUMANA INSURANCE OF PUERTO RICO, INC",
+        "naic": "84603"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMD6nwkMogEIbWVkX3N1cHA",
+        "name": "Harvard Pilgrim Hlth Care Inc",
+        "name_full": "Harvard Pilgrim Health Care, Inc.",
+        "naic": "96911"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCO5QgMogEIbWVkX3N1cHA",
+        "name": "Health Alliance Plan Of MI",
+        "name_full": "Health Alliance Plan of Michigan",
+        "naic": "95844"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgJD42gsMogEIbWVkX3N1cHA",
+        "name": "Health First Hlth Plans Inc",
+        "name_full": "Health First Health Plans, Inc.",
+        "naic": "95019"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDSlAoMogEIbWVkX3N1cHA",
+        "name": "Health New England Inc",
+        "name_full": "Health New England, Inc.",
+        "naic": "95673"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDS-AoMogEIbWVkX3N1cHA",
+        "name": "Health Now NY Inc",
+        "name_full": "HealthNow New York Inc.",
+        "naic": "55204"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMDhqggMogEIbWVkX3N1cHA",
+        "name": "Healthpartners Inc",
+        "name_full": "HealthPartners, Inc.",
+        "naic": "95766"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDk9QgMogEIbWVkX3N1cHA",
+        "name": "Healthy Alliance Life Ins Co (Anthem)",
+        "name_full": "Healthy Alliance Life Ins Co (Anthem)",
+        "naic": "78972"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMC_vgkMogEIbWVkX3N1cHA",
+        "name": "Heartland Natl Life Ins Co",
+        "name_full": "Heartland National Life Insurance Company",
+        "naic": "66214"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICuzQkMogEIbWVkX3N1cHA",
+        "name": "Highmark BCBSD Inc",
+        "name_full": "Highmark BCBSD, Inc.",
+        "naic": "53287"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDEiQoMogEIbWVkX3N1cHA",
+        "name": "Highmark Inc",
+        "name_full": "Highmark Inc.",
+        "naic": "54771"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICuzQsMogEIbWVkX3N1cHA",
+        "name": "Highmark West Virginia Inc.",
+        "name_full": "Highmark West Virginia Inc. d/b/a Highmark Blue Cross Blue Shield West Virginia",
+        "naic": "54828"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDD6wkMogEIbWVkX3N1cHA",
+        "name": "Humana Hlth Benefit Plan of LA Inc",
+        "name_full": "Humana Health Benefit Plan of Louisiana, Inc.",
+        "naic": "95642"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCrpwgMogEIbWVkX3N1cHA",
+        "name": "Humana Insurance Company",
+        "name_full": "Humana Insurance Company",
+        "naic": "60219"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCcxggMogEIbWVkX3N1cHA",
+        "name": "Humana Insurance Company",
+        "name_full": "Humana Insurance Company",
+        "naic": "95158"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCc5wgMogEIbWVkX3N1cHA",
+        "name": "Humana Insurance Company",
+        "name_full": "Humana Insurance Company",
+        "naic": "88595"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICA6QkMogEIbWVkX3N1cHA",
+        "name": "Humana Ins Co",
+        "name_full": "Humana Insurance Company",
+        "naic": "73288"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDXmgoMogEIbWVkX3N1cHA",
+        "name": "Humana Insurance Company",
+        "name_full": "Humana Insurance Company",
+        "naic": "69671"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMC17woMogEIbWVkX3N1cHA",
+        "name": "Humana Insurance Company",
+        "name_full": "Humana Insurance Company",
+        "naic": "60052"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICA4QsMogEIbWVkX3N1cHA",
+        "name": "Humana Insurance Company",
+        "name_full": "Humana Insurance Company",
+        "naic": "60984"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDS6QsMogEIbWVkX3N1cHA",
+        "name": "Humana Insurance Company",
+        "name_full": "Humana Insurance Company",
+        "naic": "70580"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDE0QoMogEIbWVkX3N1cHA",
+        "name": "Humana Ins Co of NY",
+        "name_full": "Humana Insurance Company of New York",
+        "naic": "12634"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICAlgkMogEIbWVkX3N1cHA",
+        "name": "Independence Amer Ins Co",
+        "name_full": "INDEPENDENCE AMERICAN INSURANCE COMPANY",
+        "naic": "26581"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCrzwsMogEIbWVkX3N1cHA",
+        "name": "Individual Assur Co Life Hlth & Acc",
+        "name_full": "INDIVIDUAL ASSURANCE COMPANY, LIFE, HEALTH & ACCIDENT",
+        "naic": "81779"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMD69wsMogEIbWVkX3N1cHA",
+        "name": "Independence Hospital Ind Plan Inc",
+        "name_full": "Independence Hospital Indemnity Plan, Inc.",
+        "naic": "54704"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCZ1AkMogEIbWVkX3N1cHA",
+        "name": "KPS Hlth Plans",
+        "name_full": "KPS Health Plans",
+        "naic": "53872"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCG1gkMogEIbWVkX3N1cHA",
+        "name": "KSKJ Life Amer Slovenian Catholic Un",
+        "name_full": "KSKJ Life American Slovenian Catholic Union",
+        "naic": "56227"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMD1hggMogEIbWVkX3N1cHA",
+        "name": "Liberty Natl Life Ins Co",
+        "name_full": "LIBERTY NATIONAL LIFE INSURANCE COMPANY",
+        "naic": "65331"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCrtwgMogEIbWVkX3N1cHA",
+        "name": "Liberty Bankers Life Ins Co",
+        "name_full": "Liberty Bankers Life Insurance Company",
+        "naic": "68543"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDShQgMogEIbWVkX3N1cHA",
+        "name": "LifeShield Natl Ins Co",
+        "name_full": "LifeShield National Insurance Co.",
+        "naic": "99724"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMD6zwgMogEIbWVkX3N1cHA",
+        "name": "LifeWise Hlth Plan of OR Inc",
+        "name_full": "LifeWise Health Plan of Oregon, Inc.",
+        "naic": "84930"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDDiwgMogEIbWVkX3N1cHA",
+        "name": "Louisiana Hlth Serv & Ind Co",
+        "name_full": "Louisiana Health Service and Indemnity Company",
+        "naic": "81200"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCcywsMogEIbWVkX3N1cHA",
+        "name": "Loyal Amer Life Ins Co (CIGNA)",
+        "name_full": "Loyal American Life Insurance Company (CIGNA)",
+        "naic": "65722"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDX0woMogEIbWVkX3N1cHA",
+        "name": "Loyal Christian Benefit Assn",
+        "name_full": "Loyal Christian Benefit Association",
+        "naic": "56758"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDO6AoMogEIbWVkX3N1cHA",
+        "name": "Lumico Life Insurance Company",
+        "name_full": "Lumico Life Insurance Company",
+        "naic": "73504"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMDIogsMogEIbWVkX3N1cHA",
+        "name": "Madison Natl Life Ins Co Inc",
+        "name_full": "MADISON NATIONAL LIFE INSURANCE COMPANY, INC.",
+        "naic": "65781"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICjvAgMogEIbWVkX3N1cHA",
+        "name": "Magna Ins Co",
+        "name_full": "MAGNA INSURANCE COMPANY",
+        "naic": "61018"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCrxwgMogEIbWVkX3N1cHA",
+        "name": "Medico Ins Co",
+        "name_full": "MEDICO INSURANCE COMPANY",
+        "naic": "31119"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIC5pAsMogEIbWVkX3N1cHA",
+        "name": "Moda Hlth Plan Inc",
+        "name_full": "MODA HEALTH PLAN, INC.",
+        "naic": "47098"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCrzwkMogEIbWVkX3N1cHA",
+        "name": "Monitor Life Ins Co Of NY",
+        "name_full": "MONITOR LIFE INSURANCE COMPANY OF NEW YORK",
+        "naic": "81442"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICUuAkMogEIbWVkX3N1cHA",
+        "name": "Mutual Of Omaha Ins Co",
+        "name_full": "MUTUAL OF OMAHA INSURANCE COMPANY",
+        "naic": "71412"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMDIggkMogEIbWVkX3N1cHA",
+        "name": "ManhattanLife Insurance and Annuity Company",
+        "name_full": "ManhattanLife Insurance and Annuity Company",
+        "naic": "61883"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICU8pa56QsMogEIbWVkX3N1cHA",
+        "name": "ManhattanLife of America Ins Co",
+        "name_full": "ManhattanLife of America Insurance Company",
+        "naic": "16755"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMD1hgkMogEIbWVkX3N1cHA",
+        "name": "Massachusetts Mut Life Ins Co",
+        "name_full": "Massachusetts Mutual Life Insurance Company",
+        "naic": "65935"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKD9qQgMogEIbWVkX3N1cHA",
+        "name": "McLaren Hlth Plan Inc",
+        "name_full": "McLaren Health Plan Inc",
+        "naic": "95562"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDEvwkMogEIbWVkX3N1cHA",
+        "name": "MedMutual Protect",
+        "name_full": "MedMutual Protect",
+        "naic": "69930"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDklQkMogEIbWVkX3N1cHA",
+        "name": "Medica Hlth Plans",
+        "name_full": "Medica Health Plans",
+        "naic": "52626"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgOCwpQgMogEIbWVkX3N1cHA",
+        "name": "Medical Mut Of OH",
+        "name_full": "Medical Mutual of Ohio",
+        "naic": "29076"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDOmAkMogEIbWVkX3N1cHA",
+        "name": "Medico Corp Life Ins Co",
+        "name_full": "Medico Corp Life Insurance Company",
+        "naic": "79987"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICAsQkMogEIbWVkX3N1cHA",
+        "name": "Medico Life and Health Ins Co",
+        "name_full": "Medico Life and Health Insurance Company",
+        "naic": "65641"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAiP3r2wgMogEIbWVkX3N1cHA",
+        "name": "Montana Hlth Cooperative",
+        "name_full": "Mountain Health CO-OP",
+        "naic": "14933"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDu-AsMogEIbWVkX3N1cHA",
+        "name": "Nassau Life Insurance Company",
+        "name_full": "Nassau Life Insurance Company",
+        "naic": "67814"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDXvQoMogEIbWVkX3N1cHA",
+        "name": "National Guardian Life Ins Co",
+        "name_full": "National Guardian Life Insurance Company",
+        "naic": "66583"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMC_oQsMogEIbWVkX3N1cHA",
+        "name": "New Era Life Ins Co",
+        "name_full": "New Era Life Insurance Company",
+        "naic": "78743"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICU2AgMogEIbWVkX3N1cHA",
+        "name": "New Era Life Ins Co Of Midwest",
+        "name_full": "New Era Life Insurance Company of the Midwest",
+        "naic": "69698"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDS1AoMogEIbWVkX3N1cHA",
+        "name": "New W Hlth Serv",
+        "name_full": "New West Health Services",
+        "naic": "95829"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCroQoMogEIbWVkX3N1cHA",
+        "name": "Noridian Mut Ins Co",
+        "name_full": "Noridian Mutual Insurance Company",
+        "naic": "55891"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDE3wsMogEIbWVkX3N1cHA",
+        "name": "Old Surety Life Ins Co",
+        "name_full": "OLD SURETY LIFE INS CO",
+        "naic": "67326"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICU-AkMogEIbWVkX3N1cHA",
+        "name": "Oxford Life Ins Co",
+        "name_full": "OXFORD LIFE INSURANCE COMPANY",
+        "naic": "76112"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMD12goMogEIbWVkX3N1cHA",
+        "name": "Omaha Ins Co",
+        "name_full": "Omaha Insurance Company",
+        "naic": "13100"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICI8OnX4ggMogEIbWVkX3N1cHA",
+        "name": "Omaha Supplemental Insurance Company",
+        "name_full": "Omaha Supplemental Insurance Company",
+        "naic": "16537"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCI8woMogEIbWVkX3N1cHA",
+        "name": "Paramount Ins Co",
+        "name_full": "PARAMOUNT INSURANCE COMPANY",
+        "naic": "11518"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCGrAgMogEIbWVkX3N1cHA",
+        "name": "Pekin Ins Co",
+        "name_full": "PEKIN INSURANCE COMPANY",
+        "naic": "24228"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCG-gsMogEIbWVkX3N1cHA",
+        "name": "Pekin Life Ins Co",
+        "name_full": "PEKIN LIFE INSURANCE COMPANY",
+        "naic": "67628"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDShAsMogEIbWVkX3N1cHA",
+        "name": "Pennsylvania Life Ins Co",
+        "name_full": "PENNSYLVANIA LIFE INSURANCE COMPANY",
+        "naic": "67660"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMC_wQkMogEIbWVkX3N1cHA",
+        "name": "Physicians Life Ins Co",
+        "name_full": "PHYSICIANS LIFE INSURANCE COMPANY",
+        "naic": "72125"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMC_4QgMogEIbWVkX3N1cHA",
+        "name": "Physicians Mut Ins Co",
+        "name_full": "PHYSICIANS MUTUAL INSURANCE COMPANY",
+        "naic": "80578"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMDI4ggMogEIbWVkX3N1cHA",
+        "name": "Pan Amer Life Ins Co",
+        "name_full": "Pan American Life Insurance Company",
+        "naic": "67539"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICAiQkMogEIbWVkX3N1cHA",
+        "name": "Philadelphia Amer Life Ins Co",
+        "name_full": "Philadelphia American Life Insurance Company",
+        "naic": "67784"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgIDk3c7y5wkMogEIbWVkX3N1cHA",
+        "name": "Physicians Mutual (PSIC)",
+        "name_full": "Physicians Mutual (PSIC)",
+        "naic": "17414"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMDI6gsMogEIbWVkX3N1cHA",
+        "name": "Polish Falcons Of Amer",
+        "name_full": "Polish Falcons of America",
+        "naic": "56820"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDXygkMogEIbWVkX3N1cHA",
+        "name": "Premera Blue Cross",
+        "name_full": "Premera Blue Cross",
+        "naic": "47570"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDEmQkMogEIbWVkX3N1cHA",
+        "name": "Priority Hlth",
+        "name_full": "Priority Health",
+        "naic": "95561"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAiMGg0QoMogEIbWVkX3N1cHA",
+        "name": "Providence Hlth Assur",
+        "name_full": "Providence Health Assurance",
+        "naic": "15203"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMD1pgsMogEIbWVkX3N1cHA",
+        "name": "Puritan Life Ins Co of Amer",
+        "name_full": "Puritan Life Insurance Company of America",
+        "naic": "71390"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMC1nwgMogEIbWVkX3N1cHA",
+        "name": "QCC Ins Co",
+        "name_full": "QCC INSURANCE COMPANY",
+        "naic": "93688"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCchggMogEIbWVkX3N1cHA",
+        "name": "Qualchoice Life & Hlth Ins Co Inc",
+        "name_full": "QualChoice Life and Health Insurance Company, Inc.",
+        "naic": "70998"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICjwggMogEIbWVkX3N1cHA",
+        "name": "Reserve Natl Ins Co",
+        "name_full": "RESERVE NATIONAL INSURANCE COMPANY",
+        "naic": "68462"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDumAkMogEIbWVkX3N1cHA",
+        "name": "Resource Life Ins Co",
+        "name_full": "RESOURCE LIFE INSURANCE COMPANY",
+        "naic": "61506"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCO-QkMogEIbWVkX3N1cHA",
+        "name": "Regence BCBS of OR",
+        "name_full": "Regence BlueCross BlueShield of Oregon",
+        "naic": "54933"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMC1rwkMogEIbWVkX3N1cHA",
+        "name": "Regence BCBS of UT",
+        "name_full": "Regence BlueCross BlueShield of Utah",
+        "naic": "54550"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICAxAsMogEIbWVkX3N1cHA",
+        "name": "Regence BlueShield",
+        "name_full": "Regence BlueShield",
+        "naic": "53902"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIC55AoMogEIbWVkX3N1cHA",
+        "name": "Regence Blueshield Of ID Inc",
+        "name_full": "Regence BlueShield of Idaho, Inc.",
+        "naic": "60131"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMC17wkMogEIbWVkX3N1cHA",
+        "name": "Renaissance Life & Hlth Ins Co of Am",
+        "name_full": "Renaissance Life & Health Insurance Company of America",
+        "naic": "61700"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDDqwkMogEIbWVkX3N1cHA",
+        "name": "Rocky Mountain Hmo Inc",
+        "name_full": "Rocky Mountain Health Maintenance Organization, Inc.",
+        "naic": "95482"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICA5QkMogEIbWVkX3N1cHA",
+        "name": "Royal Arcanum",
+        "name_full": "Royal Arcanum",
+        "naic": "58181"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCGtgkMogEIbWVkX3N1cHA",
+        "name": "Royal Neighbors Of Amer",
+        "name_full": "Royal Neighbors Of Amer",
+        "naic": "57657"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMC_rgsMogEIbWVkX3N1cHA",
+        "name": "S.USA Life Insurance Company, Inc (Prosperity)",
+        "name_full": "S.USA Life Insurance Company, Inc (Prosperity)",
+        "naic": "60183"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDSlAsMogEIbWVkX3N1cHA",
+        "name": "Sanford Hlth Plan of MN",
+        "name_full": "SANFORD HEALTH PLAN OF MINNESOTA",
+        "naic": "95725"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCG6gsMogEIbWVkX3N1cHA",
+        "name": "SBLI USA Life Insurance Company, Inc (Prosperity)",
+        "name_full": "SBLI USA Life Insurance Company, Inc (Prosperity)",
+        "naic": "60176"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCZpQkMogEIbWVkX3N1cHA",
+        "name": "Shenandoah Life Ins Co",
+        "name_full": "SHENANDOAH LIFE INSURANCE COMPANY",
+        "naic": "68845"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICA6QgMogEIbWVkX3N1cHA",
+        "name": "Standard Life & Cas Ins Co",
+        "name_full": "STANDARD LIFE AND CASUALTY INSURANCE COMPANY",
+        "naic": "71706"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICUmAkMogEIbWVkX3N1cHA",
+        "name": "Standard Security Life Ins Co Of NY",
+        "name_full": "STANDARD SECURITY LIFE INSURANCE COMPANY OF NEW YORK",
+        "naic": "69078"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDX_QgMogEIbWVkX3N1cHA",
+        "name": "State Mut Ins Co",
+        "name_full": "STATE MUTUAL INSURANCE COMPANY",
+        "naic": "69132"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMC_3gkMogEIbWVkX3N1cHA",
+        "name": "Stonebridge Life Ins Co",
+        "name_full": "STONEBRIDGE LIFE INSURANCE COMPANY",
+        "naic": "65021"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDkzQgMogEIbWVkX3N1cHA",
+        "name": "Sanford Hlth Plan",
+        "name_full": "Sanford Health Plan",
+        "naic": "95683"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCZnAgMogEIbWVkX3N1cHA",
+        "name": "Security Hlth Plan of WI Inc",
+        "name_full": "Security Health Plan of Wisconsin, Inc.",
+        "naic": "96881"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMDIkggMogEIbWVkX3N1cHA",
+        "name": "Sentinel Security Life Ins Co",
+        "name_full": "Sentinel Security Life Insurance Company",
+        "naic": "68802"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCIiwkMogEIbWVkX3N1cHA",
+        "name": "SilverScript Ins Co",
+        "name_full": "SilverScript Insurance Company",
+        "naic": "12575"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCcuQsMogEIbWVkX3N1cHA",
+        "name": "Southern Guar Ins Co",
+        "name_full": "Southern Guaranty Insurance Company",
+        "naic": "19178"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMDI8gsMogEIbWVkX3N1cHA",
+        "name": "Standard Life & Accident Ins Co",
+        "name_full": "Standard Life and Accident Insurance Company",
+        "naic": "86355"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDk9wsMogEIbWVkX3N1cHA",
+        "name": "State Farm Mut Auto Ins Co",
+        "name_full": "State Farm Mutual Automobile Insurance Company",
+        "naic": "25178"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCrrwoMogEIbWVkX3N1cHA",
+        "name": "Sterling Investors Life Ins Co",
+        "name_full": "Sterling Investors Life Insurance Company",
+        "naic": "89184"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCIuwoMogEIbWVkX3N1cHA",
+        "name": "Sterling Life Ins Co",
+        "name_full": "Sterling Life Insurance Company",
+        "naic": "77399"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCIswoMogEIbWVkX3N1cHA",
+        "name": "Summa Ins Co Inc",
+        "name_full": "Summa Insurance Company, Inc.",
+        "naic": "10649"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCI-wsMogEIbWVkX3N1cHA",
+        "name": "Summacare Inc",
+        "name_full": "SummaCare, Inc.",
+        "naic": "95202"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCOxQsMogEIbWVkX3N1cHA",
+        "name": "The Vt Hlth Plan LLC",
+        "name_full": "THE VERMONT HEALTH PLAN, LLC",
+        "naic": "95696"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCZtAgMogEIbWVkX3N1cHA",
+        "name": "THP Ins Co",
+        "name_full": "THP Insurance Company",
+        "naic": "60016"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDE_wgMogEIbWVkX3N1cHA",
+        "name": "Transamerica Financial Life Ins Co",
+        "name_full": "TRANSAMERICA FINANCIAL LIFE INSURANCE COMPANY",
+        "naic": "70688"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMD1tggMogEIbWVkX3N1cHA",
+        "name": "Transamerica Life Ins Co",
+        "name_full": "TRANSAMERICA LIFE INSURANCE COMPANY",
+        "naic": "86231"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCZhQoMogEIbWVkX3N1cHA",
+        "name": "Transamerica Premier Life Ins Co",
+        "name_full": "TRANSAMERICA PREMIER LIFE INSURANCE COMPANY",
+        "naic": "66281"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDX7QgMogEIbWVkX3N1cHA",
+        "name": "American Home Life Ins Co",
+        "name_full": "The American Home Life Insurance Company",
+        "naic": "60542"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCG2ggMogEIbWVkX3N1cHA",
+        "name": "Capitol Life Ins Co",
+        "name_full": "The Capitol Life Insurance Company",
+        "naic": "61581"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDOsAkMogEIbWVkX3N1cHA",
+        "name": "EPIC Life Ins Co",
+        "name_full": "The EPIC Life Insurance Company",
+        "naic": "64149"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCcqwgMogEIbWVkX3N1cHA",
+        "name": "Manhattan Life Ins Co",
+        "name_full": "The Manhattan Life Insurance Company",
+        "naic": "65870"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCc1wsMogEIbWVkX3N1cHA",
+        "name": "Thrivent Financial For Lutherans",
+        "name_full": "Thrivent Financial for Lutherans",
+        "naic": "56014"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgOCL0gkMogEIbWVkX3N1cHA",
+        "name": "Triple S Salud Inc",
+        "name_full": "Triple-S Salud, Inc.",
+        "naic": "55816"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgODarQgMogEIbWVkX3N1cHA",
+        "name": "Tufts Ins Co Inc",
+        "name_full": "Tufts Insurance Company",
+        "naic": "60117"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCc2gsMogEIbWVkX3N1cHA",
+        "name": "UCare MN",
+        "name_full": "UCare Minnesota",
+        "naic": "52629"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDErwkMogEIbWVkX3N1cHA",
+        "name": "Unified Life Ins Co",
+        "name_full": "UNIFIED LIFE INSURANCE COMPANY",
+        "naic": "11121"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMD1pgoMogEIbWVkX3N1cHA",
+        "name": "Union Security Ins Co",
+        "name_full": "UNION SECURITY INSURANCE COMPANY",
+        "naic": "70408"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCZzQgMogEIbWVkX3N1cHA",
+        "name": "United Amer Ins Co",
+        "name_full": "UNITED AMERICAN INSURANCE COMPANY",
+        "naic": "92916"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMC_gQgMogEIbWVkX3N1cHA",
+        "name": "United Of Omaha Life Ins Co",
+        "name_full": "UNITED OF OMAHA LIFE INSURANCE COMPANY",
+        "naic": "69868"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCkgAsMogEIbWVkX3N1cHA",
+        "name": "United World Life Ins Co",
+        "name_full": "UNITED WORLD LIFE INSURANCE COMPANY",
+        "naic": "72850"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDuxAsMogEIbWVkX3N1cHA",
+        "name": "Universal Fidelity Life Ins Co",
+        "name_full": "UNIVERSAL FIDELITY LIFE INSURANCE COMPANY",
+        "naic": "70122"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDuxAkMogEIbWVkX3N1cHA",
+        "name": "USAA Life Ins Co",
+        "name_full": "USAA LIFE INSURANCE COMPANY",
+        "naic": "69663"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDOxAkMogEIbWVkX3N1cHA",
+        "name": "Order of United Commercial Travelers",
+        "name_full": "United Commercial Travelers (UCT), The Order Of",
+        "naic": "56383"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICAtAkMogEIbWVkX3N1cHA",
+        "name": "United Hlthcare of AL Inc",
+        "name_full": "United HealthCare of Alabama, Inc.",
+        "naic": "95784"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMDIygkMogEIbWVkX3N1cHA",
+        "name": "United Natl Life Ins Co Of Amer",
+        "name_full": "United National Life Insurance Company of America",
+        "naic": "92703"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICutwkMogEIbWVkX3N1cHA",
+        "name": "United States Fire Ins Co",
+        "name_full": "United States Fire Insurance Company (A Crum & Forster Company)",
+        "naic": "21113"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMD1-ggMogEIbWVkX3N1cHA",
+        "name": "United Teacher Assoc Ins Co",
+        "name_full": "United Teacher Associates Insurance Company",
+        "naic": "63479"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgIDXhggMogEIbWVkX3N1cHA",
+        "name": "Unity Hlth Plans Ins Corp",
+        "name_full": "Unity Health Plans Insurance Corporation",
+        "naic": "95796"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgIDAgKve-QgMogEIbWVkX3N1cHA",
+        "name": "Univera Hlthcare WNY",
+        "name_full": "Univera Healthcare West New York",
+        "naic": "95595"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDS6QkMogEIbWVkX3N1cHA",
+        "name": "Washington Natl Ins Co",
+        "name_full": "WASHINGTON NATIONAL INSURANCE COMPANY",
+        "naic": "70319"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCZxQsMogEIbWVkX3N1cHA",
+        "name": "WMI Mut Ins Co",
+        "name_full": "WMI MUTUAL INSURANCE COMPANY",
+        "naic": "68420"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKDSuAoMogEIbWVkX3N1cHA",
+        "name": "Wisconsin Physicians Serv Ins Corp",
+        "name_full": "WPS-A Health Solutions Company",
+        "naic": "53139"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgICA5AgMogEIbWVkX3N1cHA",
+        "name": "Wellcare (Centene)",
+        "name_full": "Wellcare (Centene)",
+        "naic": "71013"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCc-goMogEIbWVkX3N1cHA",
+        "name": "Wellmark Of SD Inc",
+        "name_full": "Wellmark of South Dakota, Inc.",
+        "naic": "60128"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMC_sAoMogEIbWVkX3N1cHA",
+        "name": "Wellmark Inc",
+        "name_full": "Wellmark, Inc.",
+        "naic": "88848"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCr_gkMogEIbWVkX3N1cHA",
+        "name": "Wellpoint Ins Co (Anthem)",
+        "name_full": "Wellpoint Insurance Company (Anthem)",
+        "naic": "14078"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMC_8QoMogEIbWVkX3N1cHA",
+        "name": "Western Catholic Union",
+        "name_full": "Western Catholic Union",
+        "naic": "57711"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgKCZ9QkMogEIbWVkX3N1cHA",
+        "name": "Western United Life Assur Co",
+        "name_full": "Western United Life Assurance Company",
+        "naic": "85189"
+    },
+    {
+        "key": "agZjc2dhcGlyFAsSB0NvbXBhbnkYgICAgMCctwoMogEIbWVkX3N1cHA",
+        "name": "WoodmenLife",
+        "name_full": "WoodmenLife",
+        "naic": "57320"
+    }
+]
