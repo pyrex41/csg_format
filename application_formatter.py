@@ -354,6 +354,7 @@ def format_aetna_application(application_data: Dict[str, Any]) -> Dict[str, Any]
             "household_resident": False,
             "household_resident_has_carrier": False
         }
+    
 
     return formatted_data
 
@@ -414,6 +415,8 @@ def format_allstate_application(application_data: Dict[str, Any]) -> Dict[str, A
 
     if "hhd_information" not in data:
         formatted_data["hhd_information"] = {"hhd": False}
+    else:
+        formatted_data["hhd_information"] = data["hhd_information"]
     formatted_data["hhd_information"]["activity_tracker"] = False
     formatted_data["hhd_information"]["activity_tacker"] = False
 
