@@ -177,7 +177,10 @@ def load_producer_config() -> Dict[str, Any]:
     """Load producer configuration from JSON file."""
     try:
         with open("producer_config.json", "r") as f:
-            return json.load(f)
+            config = json.load(f)
+            # Get Garrett's data from the producers array
+            garrett_data = next(p for p in config["producers"] if p["first_name"] == "Garrett")
+            return garrett_data
     except Exception as e:
         print(f"Error loading producer config: {e}")
         return {}
