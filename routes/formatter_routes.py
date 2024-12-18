@@ -4,6 +4,7 @@ from typing import Dict, Any
 import json
 from datetime import datetime, timezone
 from application_formatter import format_application
+from urllib.parse import unquote
 
 
 
@@ -64,6 +65,21 @@ def get_carrier_name(naic: str) -> str:
     }
     return carrier_map.get(naic, "Unknown")
 
+def decode_values(obj):
+    """Recursively decode URL-encoded values in dictionaries and lists."""
+    if isinstance(obj, dict):
+        return {k: decode_values(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [decode_values(item) for item in obj]
+    elif isinstance(obj, str):
+        try:
+            # Only decode if the string contains URL-encoded characters
+            if '%' in obj:
+                return unquote(obj).strip()
+        except Exception:
+            pass
+    return obj
+
 @formatter_router.get("/api/applications/{application_id}/formatted")
 async def get_formatted_application(application_id: str):
     """
@@ -78,6 +94,18 @@ async def get_formatted_application(application_id: str):
     try:
         # Get application from database
         application = await get_application_by_id(application_id)
+        
+        # URL decode all values in application data
+        if isinstance(application.get("data"), dict):
+            application["data"] = decode_values(application["data"])
+        
+        # Handle date fields specifically to remove time component
+        if isinstance(application.get("data"), dict) and isinstance(application["data"].get("applicant_info"), dict):
+            for date_field in ["applicant_dob", "effective_date"]:
+                if application["data"]["applicant_info"].get(date_field):
+                    date_value = application["data"]["applicant_info"][date_field]
+                    if isinstance(date_value, str) and 'T' in date_value:
+                        application["data"]["applicant_info"][date_field] = date_value.split('T')[0]
         
         # Get carrier name from NAIC
         carrier = get_carrier_name(application.get('naic'))
