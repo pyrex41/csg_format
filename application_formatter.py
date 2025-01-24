@@ -22,11 +22,14 @@ def format_phone_number(phone: str) -> Dict[str, str]:
     }
 
 def format_date(date: Optional[str]) -> Optional[str]:
-    """Format date string to ISO format."""
+    """Format date string to ISO format without time."""
     if not date:
         return None
     try:
-        return f"{date}T00:00:00"
+        # If the date already has a time component, strip it
+        if 'T' in date:
+            date = date.split('T')[0]
+        return date
     except:
         return None
 
@@ -193,16 +196,19 @@ def format_ace_application(application_data: Dict[str, Any]) -> Dict[str, Any]:
     applicant_info = data.get("applicant_info", {})
     medicare_info = data.get("medicare_information", {})
     payment_info = data.get("payment", {})
-    # Calculate Medicare dates
-    medicare_dates = calculate_medicare_dates(
-        applicant_info.get("applicant_dob"),
-        applicant_info.get("effective_date"),
-        medicare_info.get("medicare_part_a"),
-        medicare_info.get("medicare_part_b")
-    )
 
-    # Get phone from either field
-    phone = applicant_info.get('phone') or applicant_info.get('applicant_phone')
+    # Add zip code lookup
+    with open('zipData.json') as f:
+        zipData = json.load(f)
+
+    zip5 = applicant_info.get("zip5")
+    if zip5:
+        zip_data = zipData.get(zip5, {})
+        address_city = zip_data.get("cities", [""])[0]
+        address_state = zip_data.get("state", "")
+    else:
+        address_city = ""
+        address_state = ""
 
     formatted_data = {
         "applicant_info": {
@@ -210,7 +216,9 @@ def format_ace_application(application_data: Dict[str, Any]) -> Dict[str, Any]:
             "l_name": applicant_info.get("l_name"),
             "address_line1": applicant_info.get("address_line1"),
             "zip5": applicant_info.get("zip5"),
-            "applicant_phone": format_phone_number(phone),
+            "address_city": address_city,
+            "address_state": address_state,
+            "applicant_phone": format_phone_number(applicant_info.get("applicant_phone") or applicant_info.get("phone")),
             "applicant_dob": format_date(applicant_info.get("applicant_dob")),
             "gender": applicant_info.get("gender"),
             "effective_date": format_date(applicant_info.get("effective_date")),
@@ -225,8 +233,18 @@ def format_ace_application(application_data: Dict[str, Any]) -> Dict[str, Any]:
             "medicare_part_a_eff_date": format_date(medicare_info.get("medicare_part_a")),
             "medicare_part_b_eff_date": format_date(medicare_info.get("medicare_part_b")),
             "enroll_part_b_more_than_once": False,
-            "did_turn_65_in_last_six_mo": medicare_dates["t65_six_months"],
-            "enroll_part_b_last_6_mo": medicare_dates["part_b_six_months"],
+            "did_turn_65_in_last_six_mo": calculate_medicare_dates(
+                applicant_info.get("applicant_dob"),
+                applicant_info.get("effective_date"),
+                medicare_info.get("medicare_part_a"),
+                medicare_info.get("medicare_part_b")
+            )["t65_six_months"],
+            "enroll_part_b_last_6_mo": calculate_medicare_dates(
+                applicant_info.get("applicant_dob"),
+                applicant_info.get("effective_date"),
+                medicare_info.get("medicare_part_a"),
+                medicare_info.get("medicare_part_b")
+            )["part_b_six_months"],
             "renal_failure": False,
             "Electronic_Combined": False,
             "apply_guaranteed_issue": False
@@ -262,24 +280,19 @@ def format_aetna_application(application_data: Dict[str, Any]) -> Dict[str, Any]
     applicant_info = data.get("applicant_info", {})
     medicare_info = data.get("medicare_information", {})
     payment_info = data.get("payment", {})
-    physician_info = data.get("physician_information", {})
-    physician_zip = physician_info.get("physician_zip")
-    if physician_zip:
-        # Look up city and state from zip code
-        with open('zipData.json') as f:
-            zip_data = json.load(f).get(physician_zip, {})
-        print(f"zip_data: {zip_data}")
-        physician_city = zip_data.get("cities", [""])[0] if zip_data.get("cities") else ""
-        physician_state = zip_data.get("state", "")
-        physician_info["physician_city"] = physician_city
-        physician_info["physician_state"] = physician_state
 
-    medicare_dates = calculate_medicare_dates(
-        applicant_info.get("applicant_dob"),
-        applicant_info.get("effective_date"),
-        medicare_info.get("medicare_part_a"),
-        medicare_info.get("medicare_part_b")
-    )
+    # Add zip code lookup
+    with open('zipData.json') as f:
+        zipData = json.load(f)
+
+    zip5 = applicant_info.get("zip5")
+    if zip5:
+        zip_data = zipData.get(zip5, {})
+        address_city = zip_data.get("cities", [""])[0]
+        address_state = zip_data.get("state", "")
+    else:
+        address_city = ""
+        address_state = ""
 
     formatted_data = {
         "applicant_info": {
@@ -287,6 +300,8 @@ def format_aetna_application(application_data: Dict[str, Any]) -> Dict[str, Any]
             "l_name": applicant_info.get("l_name"),
             "address_line1": applicant_info.get("address_line1"),
             "zip5": applicant_info.get("zip5"),
+            "address_city": address_city,
+            "address_state": address_state,
             "applicant_phone": format_phone_number(applicant_info.get("applicant_phone")),
             "applicant_dob": format_date(applicant_info.get("applicant_dob")),
             "gender": applicant_info.get("gender"),
@@ -297,7 +312,7 @@ def format_aetna_application(application_data: Dict[str, Any]) -> Dict[str, Any]
             "legal_resident": True,
             "applicant_plan": applicant_info.get("applicant_plan")
         },
-        "physician_information": physician_info,
+        "physician_information": data.get("physician_information", {}),
         "medicare_information": {
             "medicare_information_claim_number": medicare_info.get("medicareNumber"),
             "medicare_information_ssn": medicare_info.get("max_ssn"),
@@ -305,8 +320,18 @@ def format_aetna_application(application_data: Dict[str, Any]) -> Dict[str, Any]
             "medicare_part_b_coverage": True if medicare_info.get("medicare_part_b") else False,
             "medicare_part_a_eff_date": format_date(medicare_info.get("medicare_part_a")),
             "medicare_part_b_eff_date": format_date(medicare_info.get("medicare_part_b")),
-            "did_turn_65_in_last_six_mo": medicare_dates["t65_six_months"],
-            "enroll_part_b_last_6_mo": medicare_dates["part_b_six_months"],
+            "did_turn_65_in_last_six_mo": calculate_medicare_dates(
+                applicant_info.get("applicant_dob"),
+                applicant_info.get("effective_date"),
+                medicare_info.get("medicare_part_a"),
+                medicare_info.get("medicare_part_b")
+            )["t65_six_months"],
+            "enroll_part_b_last_6_mo": calculate_medicare_dates(
+                applicant_info.get("applicant_dob"),
+                applicant_info.get("effective_date"),
+                medicare_info.get("medicare_part_a"),
+                medicare_info.get("medicare_part_b")
+            )["part_b_six_months"],
             "apply_guaranteed_issue": False
         },
         "producer": {
@@ -369,20 +394,29 @@ def format_allstate_application(application_data: Dict[str, Any]) -> Dict[str, A
     applicant_info = data.get("applicant_info", {})
     medicare_info = data.get("medicare_information", {})
     payment_info = data.get("payment", {})
-    
-    medicare_dates = calculate_medicare_dates(
-        applicant_info.get("applicant_dob"),
-        applicant_info.get("effective_date"),
-        medicare_info.get("medicare_part_a"),
-        medicare_info.get("medicare_part_b")
-    )
-    applicant_info["applicant_phone"] = format_phone_number(applicant_info.get("applicant_phone"))
-    applicant_info["tobacco_usage"] = applicant_info.get("tobacco_usage") or applicant_info.get("tobacco") or False
-    if not applicant_info["tobacco_usage"] and "tobacco_last_date" in applicant_info:
-        del applicant_info["tobacco_last_date"]
+
+    # Add zip code lookup
+    with open('zipData.json') as f:
+        zipData = json.load(f)
+
+    zip5 = applicant_info.get("zip5")
+    if zip5:
+        zip_data = zipData.get(zip5, {})
+        address_city = zip_data.get("cities", [""])[0]
+        address_state = zip_data.get("state", "")
+    else:
+        address_city = ""
+        address_state = ""
 
     formatted_data = {
-        "applicant_info": applicant_info,
+        "applicant_info": {
+            **applicant_info,
+            "address_city": address_city,
+            "address_state": address_state,
+            "poa": True,
+            "applicant_phone": format_phone_number(applicant_info.get("applicant_phone")),
+            "tobacco_usage": applicant_info.get("tobacco_usage") or applicant_info.get("tobacco") or False
+        },
         "medicare_information": {
             "medicare_information_claim_number": medicare_info.get("medicareNumber"),
             "medicare_information_ssn": medicare_info.get("max_ssn"),
@@ -390,8 +424,18 @@ def format_allstate_application(application_data: Dict[str, Any]) -> Dict[str, A
             "medicare_part_b_coverage": True if medicare_info.get("medicare_part_b") else False,
             "medicare_part_a_eff_date": format_date(medicare_info.get("medicare_part_a")),
             "medicare_part_b_eff_date": format_date(medicare_info.get("medicare_part_b")),
-            "enroll_part_b_last_6_mo": medicare_dates["part_b_six_months"],
-            "did_turn_65_in_last_six_mo": medicare_dates["t65_six_months"],
+            "enroll_part_b_last_6_mo": calculate_medicare_dates(
+                applicant_info.get("applicant_dob"),
+                applicant_info.get("effective_date"),
+                medicare_info.get("medicare_part_a"),
+                medicare_info.get("medicare_part_b")
+            )["part_b_six_months"],
+            "did_turn_65_in_last_six_mo": calculate_medicare_dates(
+                applicant_info.get("applicant_dob"),
+                applicant_info.get("effective_date"),
+                medicare_info.get("medicare_part_a"),
+                medicare_info.get("medicare_part_b")
+            )["t65_six_months"],
             "disabled_esrd": False,
             "received_outline": True,
             "apply_guaranteed_issue": False
@@ -422,7 +466,7 @@ def format_allstate_application(application_data: Dict[str, Any]) -> Dict[str, A
         formatted_data["hhd_information"] = data["hhd_information"]
     formatted_data["hhd_information"]["activity_tracker"] = False
     formatted_data["hhd_information"]["activity_tacker"] = False
-
+ 
     if "medication_information" in data:
         out = copy.deepcopy(data["medication_information"])
         prescription_drug_list = out.pop("prescription_drug_list", [])
@@ -470,6 +514,12 @@ def format_allstate_application(application_data: Dict[str, Any]) -> Dict[str, A
             out["dosage"] = dosage_upper
             out["prescribed_medications"] = prescribed_medications
             data["medication_information"] = out
+
+    # Handle tobacco_last_date removal after the dictionary definition
+    if (not applicant_info.get("tobacco_usage") and 
+        "tobacco_last_date" in applicant_info and 
+        "tobacco_last_date" in formatted_data["applicant_info"]):
+        del formatted_data["applicant_info"]["tobacco_last_date"]
 
     return formatted_data
 
@@ -575,7 +625,10 @@ def format_application(application_data: Dict[str, Any], carrier: str) -> Dict[s
         print(f"Base formatted data (truncated): {truncate_json(formatted_data)}")
         
         data = parse_json_data(application_data.get("data", "{}"))
-        print(f"Parsed application data (truncated): {truncate_json(data)}")
+
+
+        # If skip_medication is True, add original medication sections back if they exist
+
         
         medicare_status = application_data.get("onboarding_data", {}).get("medicare_status")
         print(f"Medicare status: {medicare_status}")
@@ -639,7 +692,7 @@ def format_application(application_data: Dict[str, Any], carrier: str) -> Dict[s
                 }
                 other_ms_carrier, other_ms_carrier_naic = get_naic_code(existing_coverage.get("supplemental_company"))
                 new_existing_coverage["other_ms_carrier"] = other_ms_carrier
-                new_existing_coverage["other_ms_carrer_naic"] = other_ms_carrier_naic
+                new_existing_coverage["other_ms_carrier_naic"] = other_ms_carrier_naic
                 formatted_data["existing_coverage"] = new_existing_coverage
             elif medicare_status == "no-plan":
                 formatted_data["existing_coverage"] = {

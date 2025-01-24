@@ -5,7 +5,7 @@ import json
 from datetime import datetime, timezone
 from application_formatter import format_application
 from urllib.parse import unquote
-
+from pprint import pprint
 
 
 formatter_router = APIRouter()
@@ -81,12 +81,17 @@ def decode_values(obj):
     return obj
 
 @formatter_router.get("/api/applications/{application_id}/formatted")
-async def get_formatted_application(application_id: str):
+async def get_formatted_application(
+    application_id: str,
+    skip_medication: bool = False,
+    skip_producer: bool = False
+):
     """
     Retrieve and format an application by ID.
     
     Parameters:
     - application_id: The unique identifier of the application
+    - skip_medication: If True, skips formatting medication_information or health_history section
     
     Returns:
     - Formatted application data according to carrier specifications
@@ -94,6 +99,9 @@ async def get_formatted_application(application_id: str):
     try:
         # Get application from database
         application = await get_application_by_id(application_id)
+        
+        medication_information = application.get("data", {}).get("medication_information")
+        health_history = application.get("data", {}).get("health_history")
         
         # URL decode all values in application data
         if isinstance(application.get("data"), dict):
@@ -131,10 +139,15 @@ async def get_formatted_application(application_id: str):
             return obj
         
         # Apply the replacement to formatted data
-        if formatted_data.get("medication_information"):
-            formatted_data["medication_information"] = replace_empty_values(formatted_data["medication_information"])
-        # formatted_data = replace_empty_values(formatted_data)
+        if skip_medication and medication_information:
+            formatted_data["medication_information"] = replace_empty_values(medication_information)
         
+        if skip_medication and health_history:
+            formatted_data["health_history"] = replace_empty_values(health_history)
+        
+        if skip_producer and "producer" in formatted_data:
+            del formatted_data["producer"]
+            
         # Copy all sections from the original data
         if isinstance(application.get("data"), dict):
             for section, content in application["data"].items():
