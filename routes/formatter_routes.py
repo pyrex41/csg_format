@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
 from database import execute_query
 from typing import Dict, Any
 import json
@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 from application_formatter import format_application
 from urllib.parse import unquote
 from pprint import pprint
+from auth import get_current_user
 
 
 formatter_router = APIRouter()
@@ -84,7 +85,8 @@ def decode_values(obj):
 async def get_formatted_application(
     application_id: str,
     skip_medication: bool = False,
-    skip_producer: bool = False
+    skip_producer: bool = False,
+    current_user: dict = Depends(get_current_user)
 ):
     """
     Retrieve and format an application by ID.

@@ -32,11 +32,30 @@
             color: white;
             padding: 24px 32px;
             border-bottom: 3px solid #1d4ed8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .header h1 {
             font-size: 28px;
             font-weight: 600;
+        }
+
+        .logout-btn {
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
         }
 
         .controls {
@@ -300,6 +319,7 @@
     <div class="container">
         <div class="header">
             <h1>Applications Browser</h1>
+            <button class="logout-btn" onclick="logout()">Logout</button>
         </div>
 
         <div class="controls">
@@ -357,6 +377,37 @@
         let pageSize = 10;
         let currentSearch = '';
 
+        // Check authentication on page load
+        const authToken = localStorage.getItem('authToken');
+        if (!authToken) {
+            window.location.href = '/login.html';
+        }
+
+        // Helper function to make authenticated requests
+        async function authenticatedFetch(url, options = {}) {
+            const token = localStorage.getItem('authToken');
+            if (!token) {
+                window.location.href = '/login.html';
+                return;
+            }
+
+            const headers = {
+                ...options.headers,
+                'Authorization': `Bearer ${token}`
+            };
+
+            const response = await fetch(url, { ...options, headers });
+
+            // If unauthorized, redirect to login
+            if (response.status === 401) {
+                localStorage.removeItem('authToken');
+                window.location.href = '/login.html';
+                return null;
+            }
+
+            return response;
+        }
+
         async function loadApplications(page = 1) {
             const content = document.getElementById('content');
             content.innerHTML = '<div class="loading">Loading applications...</div>';
@@ -366,7 +417,9 @@
                 if (currentSearch) {
                     url += `&search=${encodeURIComponent(currentSearch)}`;
                 }
-                const response = await fetch(url);
+                const response = await authenticatedFetch(url);
+                if (!response) return;
+
                 const result = await response.json();
 
                 if (!result.success) {
@@ -483,6 +536,11 @@
             if (event.key === 'Enter') {
                 performSearch();
             }
+        }
+
+        function logout() {
+            localStorage.removeItem('authToken');
+            window.location.href = '/login.html';
         }
 
         // Load initial data

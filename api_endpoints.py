@@ -1,15 +1,16 @@
 from fastapi import APIRouter, Depends, HTTPException
 from database import execute_query
+from auth import get_current_user
 
 db_router = APIRouter()
 
 
 # Create router@db_router.get("/users")
-def read_users():
+def read_users(current_user: dict = Depends(get_current_user)):
     return [dict(user) for user in execute_query("SELECT * FROM user")]
 
 @db_router.post("/users")
-def create_user(user_id: str, email: str, isTemporary: bool, isAnonymous: bool):
+def create_user(user_id: str, email: str, isTemporary: bool, isAnonymous: bool, current_user: dict = Depends(get_current_user)):
     execute_query(
         "INSERT INTO user (id, email, is_temporary, is_anonymous) VALUES (?, ?, ?, ?)",
         (user_id, email, isTemporary, isAnonymous)
@@ -17,7 +18,7 @@ def create_user(user_id: str, email: str, isTemporary: bool, isAnonymous: bool):
     return {"message": "User created"}
 
 @db_router.get("/users/{user_id}")
-def get_user(user_id: str):
+def get_user(user_id: str, current_user: dict = Depends(get_current_user)):
     user = execute_query("SELECT * FROM user WHERE id = ?", (user_id,))
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
@@ -25,7 +26,7 @@ def get_user(user_id: str):
 
 
 @db_router.get("/applications")
-async def read_applications(page: int = 1, limit: int = 10, search: str = None):
+async def read_applications(page: int = 1, limit: int = 10, search: str = None, current_user: dict = Depends(get_current_user)):
     """
     Get paginated applications, ordered by most recent first.
 
@@ -116,7 +117,7 @@ async def read_applications(page: int = 1, limit: int = 10, search: str = None):
     }
 
 @db_router.get("/applications/{application_id}")
-async def get_application(application_id: str):
+async def get_application(application_id: str, current_user: dict = Depends(get_current_user)):
     application = await execute_query("SELECT * FROM applications WHERE id = ?", (application_id,))
     if not application:
         raise HTTPException(status_code=404, detail="Application not found")
@@ -136,6 +137,7 @@ def create_application(
     underwriting_type: int = 0,
     name: str = None,
     naic: str = None,
+    current_user: dict = Depends(get_current_user)
 ):
     execute_query(
         """INSERT INTO applications

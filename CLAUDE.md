@@ -111,6 +111,50 @@ Based on `onboarding_data.medicare_status`:
 - `"supplemental-plan"`: Sets up Medicare Supplement replacement with NAIC lookup
 - `"no-plan"`: Sets up other health insurance replacement
 
+## Authentication System
+
+The application supports **two authentication methods**:
+
+### 1. Session-Based Auth (Web UI)
+For interactive web browser usage:
+- **Login Flow**: Users authenticate at `/login.html` with username/password
+- **Token Storage**: Session tokens stored in browser localStorage
+- **Expiration**: Tokens expire after 24 hours
+- **Storage**: In-memory (not persisted across server restarts)
+
+**Default Credentials** (CHANGE IN PRODUCTION):
+- Username: `admin`
+- Password: `changeme`
+
+### 2. Static API Key (Frontend/Production)
+For programmatic API access and frontend deployments:
+- **Permanent**: Never expires
+- **Survives**: Server restarts
+- **Usage**: Include in `Authorization: Bearer {API_KEY}` header
+- **Generation**: Run `uv run python generate_api_key.py`
+
+**Configuration** (`.env`):
+```bash
+# Session-based auth
+ADMIN_USERNAME=your_username
+ADMIN_PASSWORD=your_password
+
+# Static API key (permanent)
+API_KEY=your_generated_api_key_here
+```
+
+**Frontend Setup**:
+```bash
+# In your frontend .env
+VITE_API_TOKEN=Dk9JGiu1p1fJx5njWWEPxZ6bGB3y-BikII4hTJPqF0A
+```
+
+**API Usage**:
+```bash
+curl -H "Authorization: Bearer Dk9JGiu1p1fJx5njWWEPxZ6bGB3y-BikII4hTJPqF0A" \
+  http://localhost:8001/api/db/applications
+```
+
 ## Environment Variables Required
 
 ```
@@ -123,6 +167,11 @@ CSG_API_URL=
 CSG_EMAIL=
 CSG_PASSWORD=
 CSG_API_KEY=
+
+# Application Authentication
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=changeme
+API_KEY=  # Static API key for permanent frontend access
 ```
 
 ## Data Files
